@@ -16,7 +16,14 @@ import {
   OutlinedInput,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import { logo, showPasswordIC, userIC } from "../../assets/images";
+import {
+  checkboxDefaultIC,
+  checkboxcheckedIC,
+  hidePasswordIC,
+  logo,
+  showPasswordIC,
+  userIC,
+} from "../../assets/images";
 
 function Login() {
   const [showPassword, setShowPassword] = React.useState(true);
@@ -55,11 +62,11 @@ function Login() {
                   label="Username"
                 />
               </FormControl>
-              <FormControl variant="outlined" fullWidth>
+              <FormControl variant="outlined" fullWidth sx={{ pb: "12px" }}>
                 <InputLabel htmlFor="username">Password</InputLabel>
                 <OutlinedInput
                   id="username"
-                  type={showPassword ? "text" : "password"}
+                  type={showPassword ? "password" : "text"}
                   endAdornment={
                     <InputAdornment position="end">
                       <IconButton
@@ -67,7 +74,7 @@ function Login() {
                         onClick={() => setShowPassword(!showPassword)}
                       >
                         <Avatar
-                          src={showPassword ? showPasswordIC : "Hide Password"}
+                          src={showPassword ? showPasswordIC : hidePasswordIC}
                           title={
                             showPassword ? "Show Password" : "Hide Password"
                           }
@@ -78,19 +85,31 @@ function Login() {
                   label="Password"
                 />
               </FormControl>
-              <div className="forgot-password">
+              <div className="action-wrapper">
                 <FormControlLabel
                   control={
                     <Checkbox
-                      icon={<Avatar variant="square" src="" />}
-                      checkedIcon={<Avatar variant="square" src="" />}
+                      icon={
+                        <Avatar
+                          variant="square"
+                          src={checkboxDefaultIC}
+                          alt="Unchecked"
+                        />
+                      }
+                      checkedIcon={
+                        <Avatar
+                          variant="square"
+                          src={checkboxcheckedIC}
+                          alt="Checked"
+                        />
+                      }
                       defaultChecked
                     />
                   }
                   label="Remember Me"
                 />
-                <Link to="#" title="forgot password" className="custom-link">
-                  Forgot password
+                <Link to="#" title="Forgot Password?" className="custom-link">
+                  Forgot Password?
                 </Link>
               </div>
               <Button
@@ -103,9 +122,6 @@ function Login() {
               >
                 Login
               </Button>
-              <Typography variant="body1" className="sign-up-link">
-                Don’t have an account? <Link to="#">Sign up </Link>
-              </Typography>
             </form>
           </div>
         </div>

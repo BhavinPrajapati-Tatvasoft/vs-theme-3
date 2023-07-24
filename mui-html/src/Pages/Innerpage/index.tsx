@@ -12,32 +12,33 @@ import {
   Typography,
   FormControl,
   InputLabel,
-  Input,
-  InputAdornment,
   IconButton,
   Avatar,
+  Alert,
 } from "@mui/material";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-// import {
-//   alertErrorIcon,
-//   alertInfoIcon,
-//   alertSuccessIcon,
-//   alertWarningIcon,
-//   arrowDownIcon,
-//   checkboxCheckedIcon,
-//   checkboxDefaultIcon,
-//   hidePasswordIcon,
-//   radioDefaultIcon,
-//   radioSelectedIcon,
-//   showPasswordIcon,
-//   uploadIcon,
-// } from "../../assets/images";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
-import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import TableComponent from "../../Components/Table";
+import {
+  alertErrorCloseIC,
+  alertErrorIC,
+  alertInfoCloseIC,
+  alertInfoIC,
+  alertSuccessCloseIC,
+  alertSuccessIC,
+  alertWarningCloseIC,
+  alertWarningIC,
+  checkboxDefaultIC,
+  checkboxcheckedIC,
+  downArrowIC,
+  fileUploadIC,
+  radioCheckedIC,
+  radioDefaultIC,
+} from "../../assets/images";
 
 // Tab
 interface TabPanelProps {
@@ -67,65 +68,49 @@ function a11yProps(index: number) {
   };
 }
 const Innerpage: React.FC = () => {
-  // Dropdown
-  const [age, setAge] = React.useState("");
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
+  // Select
+  const [select1, setSelect1] = React.useState("");
+  const handleSelect1Change = (event: SelectChangeEvent) => {
+    setSelect1(event.target.value as string);
   };
-  const [age1, setAge1] = React.useState("");
-  const handleChange1 = (event: SelectChangeEvent) => {
-    setAge1(event.target.value as string);
+  const [select2, setSelect2] = React.useState("");
+  const handleSelect2Change = (event: SelectChangeEvent) => {
+    setSelect2(event.target.value as string);
   };
-  const [age2, setAge2] = React.useState("");
-  const handleChange2 = (event: SelectChangeEvent) => {
-    setAge2(event.target.value as string);
+  const [select3, setSelect3] = React.useState("");
+  const handleSelect3Change = (event: SelectChangeEvent) => {
+    setSelect3(event.target.value as string);
   };
-
-  // Alert
-  const [open, setOpen] = React.useState(false);
-  const handleClose = (
-    event: React.SyntheticEvent | Event,
-    reason?: string
-  ) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setOpen(false);
+  const [select4, setSelect4] = React.useState("");
+  const handleSelect4Change = (event: SelectChangeEvent) => {
+    setSelect4(event.target.value as string);
   };
-  const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
-    props,
-    ref
-  ) {
-    return (
-      <MuiAlert
-        elevation={6}
-        ref={ref}
-        variant="outlined"
-        {...props}
-        action={
-          <React.Fragment>
-            <IconButton
-              aria-label="close"
-              color="inherit"
-              onClick={handleClose}
-            >
-              {/* <CloseIcon /> */}
-            </IconButton>
-          </React.Fragment>
-        }
-      />
-    );
-  });
+  const [select5, setSelect5] = React.useState("");
+  const handleSelect5Change = (event: SelectChangeEvent) => {
+    setSelect5(event.target.value as string);
+  };
+  const [select6, setSelect6] = React.useState("");
+  const handleSelect6Change = (event: SelectChangeEvent) => {
+    setSelect6(event.target.value as string);
+  };
+  const [select7, setSelect7] = React.useState("");
+  const handleSelect7Change = (event: SelectChangeEvent) => {
+    setSelect7(event.target.value as string);
+  };
+  const [select8, setSelect8] = React.useState("");
+  const handleSelect8Change = (event: SelectChangeEvent) => {
+    setSelect8(event.target.value as string);
+  };
+  const [select9, setSelect9] = React.useState("");
+  const handleSelect9Change = (event: SelectChangeEvent) => {
+    setSelect9(event.target.value as string);
+  };
 
   // Tab
   const [value, setValue] = React.useState(0);
   const tabHandleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
-
-  // Password States
-  const [showPassword, setShowPassword] = React.useState(true);
-  const [showPassword1, setShowPassword1] = React.useState(true);
 
   return (
     <>
@@ -136,417 +121,631 @@ const Innerpage: React.FC = () => {
         <Header />
         <Sidebar />
         <section className="main-content inner">
-          <Typography variant="h3" className="page-title box">
-            Users
+          <Typography variant="h3" className="page-title">
+            Innerpage
           </Typography>
-          <Grid container>
-            <Grid item xs={12}>
-              <Card>
-                {/* -------- first column start ---------  */}
-                <Typography variant="h5">One Column</Typography>
-                <FormControl
-                  variant="standard"
-                  fullWidth
-                  sx={{ pb: { xs: "16px", md: "30px" } }}
-                >
-                  <InputLabel htmlFor="username">Username</InputLabel>
-                  <Input id="username" type="text" />
-                </FormControl>
-                <FormControl
-                  variant="standard"
-                  fullWidth
-                  sx={{ pb: { xs: "16px", md: "30px" } }}
-                >
-                  <InputLabel id="dropdown">Drop Down</InputLabel>
-                  <Select
-                    id="dropdown"
-                    value={age}
-                    label="Age"
-                    onChange={handleChange}
-                    IconComponent={() => <Avatar src="" className="icon-20" />}
-                  >
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                  </Select>
-                </FormControl>
-                <FormControl
-                  variant="standard"
-                  fullWidth
-                  sx={{ pb: { md: "4px" } }}
-                >
+          <TableComponent />
+          <Card className="inner-card">
+            {/* -------- first column start ---------  */}
+            <Typography variant="h5">Form Elements</Typography>
+            <TextField
+              label="Name"
+              fullWidth
+              variant="outlined"
+              sx={{ pb: { xs: "16px", xl: "20px" } }}
+            />
+            <TextField
+              label="Email"
+              type="email"
+              fullWidth
+              variant="outlined"
+              sx={{ pb: { xs: "16px", xl: "20px" } }}
+            />
+            <TextField
+              label="Textarea"
+              variant="outlined"
+              multiline
+              rows={1.5}
+              fullWidth
+              sx={{ pb: { xs: "16px", xl: "22px" } }}
+            />
+            {/* -------- first column end ---------  */}
+
+            {/* -------- second column start ---------  */}
+            <section className="secondary-section">
+              <Typography variant="h5">Two Column</Typography>
+              <Grid
+                container
+                columnSpacing={{ xs: 2, xl: 4 }}
+                rowSpacing={{ xs: 2, xl: 2.5 }}
+                sx={{ pb: { xs: "16px", xl: "22px" } }}
+              >
+                <Grid item sm={6} xs={12}>
+                  <TextField label="Name" fullWidth variant="outlined" />
+                </Grid>
+                <Grid item sm={6} xs={12}>
                   <TextField
-                    id="multiline-input"
-                    label="Multiple  line"
-                    multiline
-                    rows={4}
-                    variant="standard"
+                    label="Email"
+                    type="email"
+                    fullWidth
+                    variant="outlined"
+                    defaultValue="xyz@gmail.com"
                   />
-                </FormControl>
-                {/* -------- first column end ---------  */}
-
-                {/* -------- second column start ---------  */}
-                <section className="secondary-section">
-                  <Typography variant="h5">Two Column</Typography>
-                  <Grid container spacing={{ xs: 2, lg: 4 }}>
-                    <Grid item sm={6} xs={12}>
-                      <FormControl
-                        variant="standard"
-                        fullWidth
-                        sx={{ pb: { xs: 0, sm: "8px" } }}
-                      >
-                        <InputLabel htmlFor="usernameSecond">
-                          Username
-                        </InputLabel>
-                        <Input id="usernameSecond" type="text" />
-                      </FormControl>
-                    </Grid>
-                    <Grid item sm={6} xs={12}>
-                      <FormControl
-                        variant="standard"
-                        fullWidth
-                        sx={{ pb: { xs: 0, sm: "8px" } }}
-                      >
-                        <InputLabel htmlFor="password">Password</InputLabel>
-                        <Input
-                          id="password"
-                          type={showPassword ? "password" : "text"}
-                          endAdornment={
-                            <InputAdornment position="end">
-                              <IconButton
-                                onClick={() => setShowPassword(!showPassword)}
-                              >
-                                <Avatar
-                                  src=""
-                                  title={
-                                    showPassword
-                                      ? "Show Password"
-                                      : "Hide Password"
-                                  }
-                                />
-                              </IconButton>
-                            </InputAdornment>
-                          }
+                </Grid>
+                <Grid item sm={6} xs={12}>
+                  <FormControl fullWidth>
+                    <InputLabel id="select-1">Dropdown</InputLabel>
+                    <Select
+                      labelId="select-1"
+                      id="simple-select-1"
+                      value={select1}
+                      label="Dropdown"
+                      onChange={handleSelect1Change}
+                      IconComponent={() => (
+                        <Avatar
+                          src={downArrowIC}
+                          className="select-down-arrow"
+                          alt="Down Arrow"
                         />
-                      </FormControl>
-                    </Grid>
-                    <Grid item sm={6} xs={12}>
-                      <FormControl variant="standard" fullWidth>
-                        <InputLabel htmlFor="username-second">Name</InputLabel>
-                        <Input
-                          id="username-second"
-                          type="text"
-                          value="John Doe"
-                        />
-                      </FormControl>
-                    </Grid>
-                    <Grid item sm={6} xs={12}>
-                      <FormControl variant="standard" fullWidth error>
-                        <InputLabel htmlFor="error">Error</InputLabel>
-                        <Input id="error" type="text" value="Web Designer" />
-                      </FormControl>
-                    </Grid>
-                  </Grid>
-                </section>
-                {/* -------- second column end ---------  */}
-
-                {/* -------- third column start ---------  */}
-                <section className="secondary-section">
-                  <Typography variant="h5">Three Column</Typography>
-                  <Grid container spacing={{ xs: 2, lg: 4 }}>
-                    <Grid item xs={12} sm={6} lg={4}>
-                      <FormControl variant="standard" fullWidth>
-                        <InputLabel htmlFor="focus-field">Focus</InputLabel>
-                        <Input id="focus-field" type="text" />
-                      </FormControl>
-                    </Grid>
-                    <Grid item xs={12} sm={6} lg={4}>
-                      <FormControl variant="standard" fullWidth>
-                        <InputLabel htmlFor="usernameThird">
-                          Disabled
-                        </InputLabel>
-                        <Input
-                          id="usernameThird"
-                          type="text"
-                          value="John Doe"
-                          disabled
-                        />
-                      </FormControl>
-                    </Grid>
-                    <Grid item xs={12} sm={6} lg={4}>
-                      <FormControl variant="standard" fullWidth>
-                        <InputLabel id="dropdown-second">Drop Down</InputLabel>
-                        <Select
-                          id="dropdown-second"
-                          value={age1}
-                          label="Age"
-                          onChange={handleChange1}
-                          IconComponent={() => (
-                            <Avatar src="" className="icon-20" />
-                          )}
-                        >
-                          <MenuItem value={10}>Ten</MenuItem>
-                          <MenuItem value={20}>Twenty</MenuItem>
-                          <MenuItem value={30}>Thirty</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Grid>
-                  </Grid>
-                </section>
-                {/* -------- third column end ---------  */}
-
-                {/* -------- four column start ---------  */}
-                <section className="secondary-section">
-                  <Typography variant="h5">Four Column</Typography>
-                  <Grid container spacing={{ xs: 2, lg: 4 }}>
-                    <Grid item xs={12} sm={6} lg={3}>
-                      <FormControl variant="standard" fullWidth>
-                        <InputLabel htmlFor="usernameFour">Username</InputLabel>
-                        <Input id="usernameFour" type="text" />
-                      </FormControl>
-                    </Grid>
-                    <Grid item xs={12} sm={6} lg={3}>
-                      <FormControl variant="standard" fullWidth>
-                        <InputLabel htmlFor="passwordSecond">
-                          Password
-                        </InputLabel>
-                        <Input
-                          id="passwordSecond"
-                          type={showPassword1 ? "password" : "text"}
-                          endAdornment={
-                            <InputAdornment position="end">
-                              <IconButton
-                                onClick={() => setShowPassword1(!showPassword1)}
-                              >
-                                <Avatar
-                                  src=""
-                                  title={
-                                    showPassword1
-                                      ? "Show Password"
-                                      : "Hide Password"
-                                  }
-                                />
-                              </IconButton>
-                            </InputAdornment>
-                          }
-                        />
-                      </FormControl>
-                    </Grid>
-                    <Grid item xs={12} sm={6} lg={3}>
-                      <FormControl variant="standard" fullWidth>
-                        <InputLabel id="dropdownFour">Drop Down</InputLabel>
-                        <Select
-                          id="dropdownFour"
-                          value={age2}
-                          label="Age"
-                          onChange={handleChange2}
-                          IconComponent={() => (
-                            <Avatar src="" className="icon-20" />
-                          )}
-                        >
-                          <MenuItem value={10}>Ten</MenuItem>
-                          <MenuItem value={20}>Twenty</MenuItem>
-                          <MenuItem value={30}>Thirty</MenuItem>
-                        </Select>
-                      </FormControl>
-                    </Grid>
-                    <Grid item xs={12} sm={6} lg={3}>
-                      <FormControl variant="standard" fullWidth error>
-                        <InputLabel htmlFor="errorFour">Error</InputLabel>
-                        <Input
-                          id="errorFour"
-                          type="text"
-                          value="Web Designer"
-                        />
-                      </FormControl>
-                    </Grid>
-                  </Grid>
-                </section>
-                {/* -------- four column end ---------  */}
-
-                {/* -------- other element start ---------  */}
-                <div className="secondary-section other-elements">
-                  <Typography variant="h5" sx={{ pb: "20px" }}>
-                    Other Design elements
-                  </Typography>
-
-                  <Typography variant="h6">File Upload</Typography>
-                  <div className="file-upload">
-                    <Button
-                      variant="text"
-                      component="label"
-                      startIcon={
-                        <Avatar variant="square" src="" className="icon-20" />
-                      }
-                      className="btn-upload"
-                      title="Upload Your File"
+                      )}
                     >
-                      Upload
-                      <input hidden accept="image/*" multiple type="file" />
-                    </Button>
-                    <p>No item Selected</p>
-                  </div>
-
-                  <Typography variant="h6" className="form-title">
-                    Check Box
-                  </Typography>
-                  <div className="check-group">
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          icon={<Avatar variant="square" src="" />}
-                          checkedIcon={<Avatar variant="square" src="" />}
-                          defaultChecked
+                      <MenuItem value={10}>Item 1</MenuItem>
+                      <MenuItem value={20}>Item 2</MenuItem>
+                      <MenuItem value={30}>Item 3</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item sm={6} xs={12}>
+                  <FormControl fullWidth>
+                    <InputLabel id="select-9">Dropdown</InputLabel>
+                    <Select
+                      labelId="select-9"
+                      id="simple-select-9"
+                      value={select9}
+                      label="Dropdown"
+                      onChange={handleSelect9Change}
+                      IconComponent={() => (
+                        <Avatar
+                          src={downArrowIC}
+                          className="select-down-arrow"
+                          alt="Down Arrow"
                         />
-                      }
-                      label="Selected"
-                    />
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          icon={<Avatar variant="square" src="" />}
-                          checkedIcon={<Avatar variant="square" src="" />}
-                        />
-                      }
-                      label="Not yet Selected"
-                    />
-                  </div>
-
-                  <Typography variant="h6" className="form-title">
-                    Radio Button
-                  </Typography>
-                  <div className="radio-group">
-                    <RadioGroup
-                      defaultValue="Selected"
-                      name="radio-buttons-group"
+                      )}
                     >
-                      <FormControlLabel
-                        value="Selected"
-                        control={
-                          <Radio
-                            icon={
-                              <Avatar variant="rounded" src="" defaultChecked />
-                            }
-                            checkedIcon={<Avatar variant="rounded" src="" />}
+                      <MenuItem value={10}>Item 1</MenuItem>
+                      <MenuItem value={20}>Item 2</MenuItem>
+                      <MenuItem value={30}>Item 3</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+              </Grid>
+            </section>
+            {/* -------- second column end ---------  */}
+
+            {/* -------- third column start ---------  */}
+            <section className="secondary-section">
+              <Typography variant="h5">Three Column</Typography>
+              <Grid
+                container
+                columnSpacing={{ xs: 2, xl: 4 }}
+                rowSpacing={{ xs: 2, xl: 2.5 }}
+                sx={{ pb: { xs: "16px", xl: "22px" } }}
+              >
+                <Grid item xs={12} sm={6} lg={4}>
+                  <TextField label="Name" fullWidth variant="outlined" />
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4}>
+                  <TextField
+                    label="Name"
+                    fullWidth
+                    variant="outlined"
+                    defaultValue="John Doe"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4}>
+                  <TextField
+                    label="Email"
+                    type="email"
+                    fullWidth
+                    variant="outlined"
+                    defaultValue="xyz@gmail.com"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4}>
+                  <FormControl fullWidth>
+                    <InputLabel id="select-2">Dropdown</InputLabel>
+                    <Select
+                      labelId="select-2"
+                      id="simple-select-2"
+                      value={select2}
+                      label="Dropdown"
+                      onChange={handleSelect2Change}
+                      IconComponent={() => (
+                        <Avatar
+                          src={downArrowIC}
+                          className="select-down-arrow"
+                          alt="Down Arrow"
+                        />
+                      )}
+                    >
+                      <MenuItem value={10}>Item 1</MenuItem>
+                      <MenuItem value={20}>Item 2</MenuItem>
+                      <MenuItem value={30}>Item 3</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4}>
+                  <FormControl fullWidth>
+                    <InputLabel id="select-3">Dropdown</InputLabel>
+                    <Select
+                      labelId="select-3"
+                      id="simple-select-3"
+                      value={select3}
+                      label="Dropdown"
+                      onChange={handleSelect3Change}
+                      IconComponent={() => (
+                        <Avatar
+                          src={downArrowIC}
+                          className="select-down-arrow"
+                          alt="Down Arrow"
+                        />
+                      )}
+                    >
+                      <MenuItem value={10}>Item 1</MenuItem>
+                      <MenuItem value={20}>Item 2</MenuItem>
+                      <MenuItem value={30}>Item 3</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4}>
+                  <FormControl fullWidth>
+                    <InputLabel id="select-4">Dropdown</InputLabel>
+                    <Select
+                      labelId="select-4"
+                      id="simple-select-4"
+                      value={select4}
+                      label="Dropdown"
+                      onChange={handleSelect4Change}
+                      IconComponent={() => (
+                        <Avatar
+                          src={downArrowIC}
+                          className="select-down-arrow"
+                          alt="Down Arrow"
+                        />
+                      )}
+                    >
+                      <MenuItem value={10}>Item 1</MenuItem>
+                      <MenuItem value={20}>Item 2</MenuItem>
+                      <MenuItem value={30}>Item 3</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+              </Grid>
+            </section>
+            {/* -------- third column end ---------  */}
+
+            {/* -------- four column start ---------  */}
+            <section className="secondary-section">
+              <Typography variant="h5">Four Column</Typography>
+              <Grid
+                container
+                columnSpacing={{ xs: 2, xl: 4 }}
+                rowSpacing={{ xs: 2, xl: 2.5 }}
+                sx={{ pb: "22px" }}
+              >
+                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                  <TextField label="Name" fullWidth variant="outlined" />
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                  <TextField
+                    label="Email"
+                    type="email"
+                    fullWidth
+                    variant="outlined"
+                    defaultValue="xyz@gmail.com"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                  <TextField
+                    label="Email"
+                    type="email"
+                    fullWidth
+                    variant="outlined"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                  <TextField
+                    label="Name"
+                    fullWidth
+                    variant="outlined"
+                    defaultValue="John Doe"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                  <FormControl fullWidth>
+                    <InputLabel id="select-5">Dropdown</InputLabel>
+                    <Select
+                      labelId="select-5"
+                      id="simple-select-5"
+                      value={select5}
+                      label="Dropdown"
+                      onChange={handleSelect5Change}
+                      IconComponent={() => (
+                        <Avatar
+                          src={downArrowIC}
+                          className="select-down-arrow"
+                          alt="Down Arrow"
+                        />
+                      )}
+                    >
+                      <MenuItem value={10}>Item 1</MenuItem>
+                      <MenuItem value={20}>Item 2</MenuItem>
+                      <MenuItem value={30}>Item 3</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                  <FormControl fullWidth>
+                    <InputLabel id="select-6">Dropdown</InputLabel>
+                    <Select
+                      labelId="select-6"
+                      id="simple-select-6"
+                      value={select6}
+                      label="Dropdown"
+                      onChange={handleSelect6Change}
+                      IconComponent={() => (
+                        <Avatar
+                          src={downArrowIC}
+                          className="select-down-arrow"
+                          alt="Down Arrow"
+                        />
+                      )}
+                    >
+                      <MenuItem value={10}>Item 1</MenuItem>
+                      <MenuItem value={20}>Item 2</MenuItem>
+                      <MenuItem value={30}>Item 3</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                  <FormControl fullWidth>
+                    <InputLabel id="select-7">Dropdown</InputLabel>
+                    <Select
+                      labelId="select-7"
+                      id="simple-select-7"
+                      value={select7}
+                      label="Dropdown"
+                      onChange={handleSelect7Change}
+                      IconComponent={() => (
+                        <Avatar
+                          src={downArrowIC}
+                          className="select-down-arrow"
+                          alt="Down Arrow"
+                        />
+                      )}
+                    >
+                      <MenuItem value={10}>Item 1</MenuItem>
+                      <MenuItem value={20}>Item 2</MenuItem>
+                      <MenuItem value={30}>Item 3</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                  <FormControl fullWidth>
+                    <InputLabel id="select-8">Dropdown</InputLabel>
+                    <Select
+                      labelId="select-8"
+                      id="simple-select-8"
+                      value={select8}
+                      label="Dropdown"
+                      onChange={handleSelect8Change}
+                      IconComponent={() => (
+                        <Avatar
+                          src={downArrowIC}
+                          className="select-down-arrow"
+                          alt="Down Arrow"
+                        />
+                      )}
+                    >
+                      <MenuItem value={10}>Item 1</MenuItem>
+                      <MenuItem value={20}>Item 2</MenuItem>
+                      <MenuItem value={30}>Item 3</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+              </Grid>
+            </section>
+            {/* -------- four column end ---------  */}
+
+            {/* -------- other element start ---------  */}
+            <div className="secondary-section other-elements">
+              <Typography variant="h5" className="other-heading">
+                Other Form Elements
+              </Typography>
+
+              <Typography variant="h6" className="upload-heading">
+                File Upload
+              </Typography>
+              <div className="file-upload">
+                <Button
+                  variant="contained"
+                  component="label"
+                  startIcon={
+                    <Avatar variant="square" src={fileUploadIC} alt="Upload" />
+                  }
+                  className="btn-upload"
+                  title="Upload Your File"
+                >
+                  Upload
+                  <input hidden accept="image/*" multiple type="file" />
+                </Button>
+                <p>No file uploaded</p>
+              </div>
+
+              <Typography variant="h6" className="check-radio-title">
+                Check Box
+              </Typography>
+              <div className="check-group">
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      icon={
+                        <Avatar
+                          variant="square"
+                          src={checkboxDefaultIC}
+                          alt="Checkbox"
+                        />
+                      }
+                      checkedIcon={
+                        <Avatar
+                          variant="square"
+                          src={checkboxcheckedIC}
+                          alt="Checkbox"
+                        />
+                      }
+                      defaultChecked
+                    />
+                  }
+                  label="Option 1"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      icon={
+                        <Avatar
+                          variant="square"
+                          src={checkboxDefaultIC}
+                          alt="Checkbox"
+                        />
+                      }
+                      checkedIcon={
+                        <Avatar
+                          variant="square"
+                          src={checkboxcheckedIC}
+                          alt="Checkbox"
+                        />
+                      }
+                    />
+                  }
+                  label="Option 2"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      icon={
+                        <Avatar
+                          variant="square"
+                          src={checkboxDefaultIC}
+                          alt="Checkbox"
+                        />
+                      }
+                      checkedIcon={
+                        <Avatar
+                          variant="square"
+                          src={checkboxcheckedIC}
+                          alt="Checkbox"
+                        />
+                      }
+                    />
+                  }
+                  label="Option 3"
+                />
+              </div>
+
+              <Typography variant="h6" className="check-radio-title">
+                Radio Button
+              </Typography>
+              <div className="radio-group">
+                <RadioGroup defaultValue="Option 1" name="radio-buttons-group">
+                  <FormControlLabel
+                    value="Option 1"
+                    control={
+                      <Radio
+                        icon={
+                          <Avatar
+                            variant="rounded"
+                            src={radioDefaultIC}
+                            alt="Radio"
                           />
                         }
-                        label="Selected"
-                      />
-                      <FormControlLabel
-                        value="Not yet Selected"
-                        control={
-                          <Radio
-                            icon={<Avatar variant="rounded" src="" />}
-                            checkedIcon={<Avatar variant="rounded" src="" />}
+                        checkedIcon={
+                          <Avatar
+                            variant="rounded"
+                            src={radioCheckedIC}
+                            alt="Radio"
                           />
                         }
-                        label="Not yet Selected"
                       />
-                    </RadioGroup>
-                  </div>
+                    }
+                    label="Option 1"
+                  />
+                  <FormControlLabel
+                    value="Option 2"
+                    control={
+                      <Radio
+                        icon={
+                          <Avatar
+                            variant="rounded"
+                            src={radioDefaultIC}
+                            alt="Radio"
+                          />
+                        }
+                        checkedIcon={
+                          <Avatar
+                            variant="rounded"
+                            src={radioCheckedIC}
+                            alt="Radio"
+                          />
+                        }
+                      />
+                    }
+                    label="Option 2"
+                  />
+                  <FormControlLabel
+                    value="Option 3"
+                    control={
+                      <Radio
+                        icon={
+                          <Avatar
+                            variant="rounded"
+                            src={radioDefaultIC}
+                            alt="Radio"
+                          />
+                        }
+                        checkedIcon={
+                          <Avatar
+                            variant="rounded"
+                            src={radioCheckedIC}
+                            alt="Radio"
+                          />
+                        }
+                      />
+                    }
+                    label="Option 3"
+                  />
+                </RadioGroup>
+              </div>
 
-                  <Typography variant="h6">Snack Bar</Typography>
-                  <div className="snackbar-group">
-                    <Grid
-                      container
-                      rowSpacing={{ xs: 2, lg: 3 }}
-                      columnSpacing={{ xs: 2, lg: 4 }}
-                    >
-                      <Grid item lg={6} xs={12}>
-                        <Alert severity="error" icon={<Avatar src="" />}>
-                          This is an error message!
-                        </Alert>
-                      </Grid>
-                      <Grid item lg={6} xs={12}>
-                        <Alert severity="info" icon={<Avatar src="" />}>
-                          This is an information message!
-                        </Alert>
-                      </Grid>
-                      <Grid item lg={6} xs={12}>
-                        <Alert severity="warning" icon={<Avatar src="" />}>
-                          This is a warning message!
-                        </Alert>
-                      </Grid>
-                      <Grid item lg={6} xs={12}>
-                        <Alert severity="success" icon={<Avatar src="" />}>
-                          This is a success message!
-                        </Alert>
-                      </Grid>
-                    </Grid>
-                  </div>
+              <Typography variant="h6" className="buttons-heading">
+                Buttons
+              </Typography>
+              <div className="btn-group">
+                <Button variant="contained" title="Primary">
+                  Primary
+                </Button>
+                <Button variant="contained" title="Primary" disabled>
+                  Primary
+                </Button>
+                <Button variant="contained" color="secondary" title="Secondary">
+                  Secondary
+                </Button>
+                <Button variant="outlined" title="Secondary" color="secondary">
+                  Secondary
+                </Button>
+              </div>
 
-                  <Typography variant="h6">CTA</Typography>
-                  <div className="btn-group">
-                    <Button variant="contained" title="Primary">
-                      Primary
-                    </Button>
-                    <Button variant="outlined" title="Secondary">
-                      Secondary
-                    </Button>
-                  </div>
-                </div>
-                {/* -------- other element end ---------  */}
+              <Typography variant="h6">Alerts</Typography>
+              <div className="alert-group">
+                <Alert
+                  severity="success"
+                  variant="outlined"
+                  icon={<Avatar src={alertSuccessIC} alt="Success" />}
+                  action={
+                    <IconButton>
+                      <Avatar src={alertSuccessCloseIC} alt="Close" />
+                    </IconButton>
+                  }
+                >
+                  This is a success message.
+                </Alert>
+                <Alert
+                  severity="warning"
+                  variant="outlined"
+                  icon={<Avatar src={alertWarningIC} alt="Warning" />}
+                  action={
+                    <IconButton>
+                      <Avatar src={alertWarningCloseIC} alt="Close" />
+                    </IconButton>
+                  }
+                >
+                  This is a warning message.
+                </Alert>
+                <Alert
+                  severity="info"
+                  variant="outlined"
+                  icon={<Avatar src={alertInfoIC} alt="Info" />}
+                  action={
+                    <IconButton>
+                      <Avatar src={alertInfoCloseIC} alt="Close" />
+                    </IconButton>
+                  }
+                >
+                  This is an info message.
+                </Alert>
+                <Alert
+                  severity="error"
+                  icon={<Avatar src={alertErrorIC} alt="Info" />}
+                  action={
+                    <IconButton>
+                      <Avatar src={alertErrorCloseIC} alt="Close" />
+                    </IconButton>
+                  }
+                >
+                  This is an error message.
+                </Alert>
+              </div>
+            </div>
+            {/* -------- other element end ---------  */}
 
-                {/* -------- Tab section start ---------  */}
-                <div className="secondary-section tab-wrapper">
-                  <Typography variant="h5" sx={{ pb: "23px" }}>
-                    Tabs
-                  </Typography>
-                  <Tabs
-                    value={value}
-                    onChange={tabHandleChange}
-                    aria-label="basic tabs example"
-                  >
-                    <Tab label="Tab 1" {...a11yProps(0)} />
-                    <Tab label="Tab 2" {...a11yProps(1)} />
-                    <Tab label="Tab 3" {...a11yProps(2)} />
-                    <Tab label="Tab 4" {...a11yProps(3)} />
-                  </Tabs>
-                  <TabPanel value={value} index={0}>
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution of letters, as opposed to
-                    using 'Content here, content here', making it look like
-                    readable English. Many desktop publishing packages and web
-                    page editors now use Lorem Ipsum as their default model
-                    text, and a search for 'lorem ipsum' will uncover many web
-                    sites still in their infancy.
-                  </TabPanel>
-                  <TabPanel value={value} index={1}>
-                    Item Two
-                  </TabPanel>
-                  <TabPanel value={value} index={2}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas a varius nulla. Proin accumsan nunc lacinia ipsum
-                    venenatis varius. Proin rutrum, diam id facilisis hendrerit,
-                    dui est malesuada risus, sed sollicitudin felis eros vitae
-                    libero. Integer in magna lectus. Vestibulum facilisis
-                    ultrices libero sed tincidunt. Nullam vitae mollis diam, eu
-                    posuere diam. Suspendisse potenti. Proin pellentesque
-                    egestas justo a tempor. Donec lorem sem, dictum at consequat
-                    et, maximus quis mauris. Mauris leo elit, scelerisque a
-                    lorem vitae, dignissim sodales dolor. In hac habitasse
-                    platea dictumst.
-                  </TabPanel>
-                  <TabPanel value={value} index={3}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas a varius nulla. Proin accumsan nunc lacinia ipsum
-                    venenatis varius. Proin rutrum, diam id facilisis hendrerit,
-                    dui est malesuada risus, sed sollicitudin felis eros vitae
-                    libero. Integer in magna lectus. Vestibulum facilisis
-                    ultrices libero sed tincidunt. Nullam vitae mollis diam, eu
-                    posuere diam. Suspendisse potenti. Proin pellentesque
-                    egestas justo a tempor. Donec lorem sem, dictum at consequat
-                    et, maximus quis mauris. Mauris leo elit, scelerisque a
-                    lorem vitae, dignissim sodales dolor. In hac habitasse
-                    platea dictumst.
-                  </TabPanel>
-                </div>
-                {/* -------- Tab section end ---------  */}
-              </Card>
-            </Grid>
-          </Grid>
+            {/* -------- Tab section start ---------  */}
+            <div className="secondary-section tab-wrapper">
+              <Typography variant="h5">Tabs</Typography>
+              <Tabs
+                value={value}
+                scrollButtons="auto"
+                variant="scrollable"
+                onChange={tabHandleChange}
+                aria-label="basic tabs example"
+              >
+                <Tab label="Tab 1" {...a11yProps(0)} />
+                <Tab label="Tab 2" {...a11yProps(1)} />
+                <Tab label="Tab 3" {...a11yProps(2)} />
+              </Tabs>
+              <TabPanel value={value} index={0}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu
+                arcu, euismod mattis velit. Id lacus faucibus morbi pulvinar
+                integer natoque risus fermentum, nulla. Sit sapien arcu enim
+                cursus quam nunc. Arcu ipsum amet imperdiet sed posuere Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit. Eu arcu,
+                euismod mattis velit. Id lacus faucibus morbi pulvinar integer
+                natoque risus fermentum, nulla. Sit sapien arcu enim cursus quam
+                nunc. Arcu ipsum amet imperdiet sed posuere.
+              </TabPanel>
+              <TabPanel value={value} index={1}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Maecenas a varius nulla. Proin accumsan nunc lacinia ipsum
+                venenatis varius. Proin rutrum, diam id facilisis hendrerit, dui
+                est malesuada risus, sed sollicitudin felis eros vitae libero.
+                Integer in magna lectus. Vestibulum facilisis ultrices libero
+                sed tincidunt. Nullam vitae mollis diam, eu posuere diam.
+                Suspendisse potenti.
+              </TabPanel>
+              <TabPanel value={value} index={2}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Maecenas a varius nulla. Proin accumsan nunc lacinia ipsum
+                venenatis varius. Proin rutrum, diam id facilisis hendrerit, dui
+                est malesuada risus, sed sollicitudin felis eros vitae libero.
+                Integer in magna lectus. Vestibulum facilisis ultrices libero
+                sed tincidunt. Nullam vitae mollis diam, eu posuere diam.
+                Suspendisse potenti. Proin pellentesque egestas justo a tempor.
+                Donec lorem sem, dictum at consequat et, maximus quis mauris.
+              </TabPanel>
+            </div>
+            {/* -------- Tab section end ---------  */}
+          </Card>
+          <section className="copyright">
+            <p>Copyright 2021. All rights reserved</p>
+          </section>
         </section>
       </div>
     </>

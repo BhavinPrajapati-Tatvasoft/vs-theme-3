@@ -15,7 +15,6 @@ let myCustomTheme = createTheme({
 });
 
 myCustomTheme = createTheme(myCustomTheme, {
-  // Typography
   typography: {
     h2: {
       fontSize: "42px",
@@ -26,48 +25,29 @@ myCustomTheme = createTheme(myCustomTheme, {
       //   fontSize: "40px",
       //   lineHeight: "46px",
       // },
-      // [myCustomTheme.breakpoints.down("md")]: {
-      //   fontSize: "32px",
-      //   lineHeight: "38px",
-      // },
-      // [myCustomTheme.breakpoints.down("sm")]: {
-      //   fontSize: "26px",
-      //   lineHeight: "32px",
-      // },
     },
     h3: {
       fontSize: "28px",
       lineHeight: "34px",
       color: "#666666",
       fontWeight: "500",
-      // [myCustomTheme.breakpoints.down("md")]: {
-      //   fontSize: "26px",
-      //   lineHeight: "30px",
-      // },
-      // [myCustomTheme.breakpoints.down("sm")]: {
-      //   fontSize: "20px",
-      //   lineHeight: "26px",
-      // },
+      [myCustomTheme.breakpoints.down("sm")]: {
+        fontSize: "24px",
+        lineHeight: "30px",
+      },
     },
     h5: {
       fontSize: "20px",
       lineHeight: "26px",
       fontWeight: "500",
       color: "#333333",
-      // [myCustomTheme.breakpoints.down("sm")]: {
-      //   fontSize: "16px",
-      //   lineHeight: "20px",
-      // },
+      whiteSpace: "nowrap",
     },
     h6: {
       fontSize: "18px",
       lineHeight: "24px",
       fontWeight: 500,
       color: "#444444",
-      // [myCustomTheme.breakpoints.down("sm")]: {
-      //   fontSize: "15px",
-      //   lineHeight: "20px",
-      // },
     },
   },
   components: {
@@ -77,90 +57,157 @@ myCustomTheme = createTheme(myCustomTheme, {
           fontSize: "16px",
           lineHeight: "24px",
         },
-        contained: { boxShadow: "none !important" },
+        contained: {
+          boxShadow: "none !important",
+          minWidth: "136px",
+          fontWeight: "400",
+          "&.MuiButtonBase-root": {
+            textTransform: "capitalize",
+          },
+        },
+        outlined: {
+          minWidth: "136px",
+          fontWeight: "400",
+          "&.MuiButtonBase-root": {
+            textTransform: "capitalize",
+          },
+        },
         containedPrimary: {
           borderRadius: "4px",
           padding: "12px 16px",
           color: "#FFFFFF",
-          fontWeight: "400",
-          // [myCustomTheme.breakpoints.down("md")]: {
-          //   padding: "8px 24px",
-          // },
-        },
-        // outlinedPrimary: {
-        //   color: "#3EAE86",
-        //   textTransform: "uppercase",
-        //   borderRadius: "10px",
-        //   padding: "12px 28px",
-        //   border: "2px solid #59B997",
-        //   "&:hover": { border: "2px solid #59B997" },
-        //   [myCustomTheme.breakpoints.down("md")]: {
-        //     padding: "6px 24px",
-        //   },
-        // },
-        text: {
-          "&.btn-upload": {
-            backgroundColor: "#F6F6F6",
-            padding: "9px 25px",
-            borderRadius: "5px",
-            fontWeight: 400,
-            fontSize: "15px",
-            lineHeight: "17px",
-            color: "#6D6D6D",
-            textTransform: "lowercase",
+          "&.Mui-disabled": {
+            backgroundColor: "#23C68B",
+            color: "#ffffff",
+            opacity: "0.5",
+            cursor: "not-allowed",
           },
+        },
+        containedSecondary: {
+          padding: "12px 16px",
+          color: "#565656",
+          backgroundColor: "#E2E2E2",
+          "&:hover": {
+            backgroundColor: "#c9c9c9",
+          },
+        },
+        outlinedSecondary: {
+          padding: "11px 16px",
+          borderColor: "#C4C4C4",
+          color: "#565656",
+          backgroundColor: "transparent",
         },
       },
     },
     MuiIconButton: {
       styleOverrides: {
         root: {
-          "&.custom-btn": {
-            border: "1px solid #EAEAEA",
-            borderRadius: "10px",
-            width: "53px",
-            height: "47px",
-            display: "flex",
-            alignItems: "center",
+          "&.MuiIconButton-colorPrimary": {
+            "&:hover": {
+              backgroundColor: "rgba(35, 198, 139, 0.1)",
+            },
           },
-        },
-      },
-    },
-    MuiFormControl: {
-      styleOverrides: {
-        root: {},
-      },
-    },
-    MuiInputAdornment: {
-      styleOverrides: {
-        root: {
-          ".MuiButtonBase-root": { margin: 0 },
         },
       },
     },
     MuiFormLabel: {
       styleOverrides: {
-        root: {},
+        root: {
+          color: "#A5A5A5",
+          lineHeight: "24px",
+          "&.MuiInputLabel-root": {
+            transform: "translate(19px, 12px) scale(1)",
+            "&.Mui-focused,&.MuiFormLabel-filled": {
+              transform: "translate(19px, -9px) scale(0.75)",
+            },
+          },
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          color: "#333333",
+          lineHeight: "24px",
+          fieldset: {
+            borderColor: "#C4C4C4",
+            transition: "all 0.3s ease-out",
+            legend: {
+              marginLeft: "5px",
+            },
+          },
+          "&:hover": {
+            "fieldset.MuiOutlinedInput-notchedOutline": {
+              borderColor: "#808080",
+            },
+          },
+          "&.Mui-focused": {
+            "fieldset.MuiOutlinedInput-notchedOutline": {
+              borderWidth: "2px",
+              borderColor: "#23C68B",
+            },
+          },
+          ".MuiInputBase-input": {
+            height: "24px",
+            padding: "12px 19px",
+            "&::placeholder": {
+              color: "#B1B1B1",
+              opacity: 1,
+            },
+          },
+          ".MuiSelect-select": {
+            position: "relative",
+            zIndex: 1,
+          },
+          ".select-down-arrow": {
+            right: "10px",
+            position: "absolute",
+            top: "50%",
+            transform: "translateY(-50%)",
+          },
+        },
+      },
+    },
+    MuiInputAdornment: {
+      styleOverrides: {
+        root: {
+          "&.MuiInputAdornment-outlined": {
+            margin: 0,
+          },
+          "&.MuiInputAdornment-positionStart": {
+            ".MuiButtonBase-root": { marginLeft: "-11px" },
+          },
+          "&.MuiInputAdornment-positionEnd": {
+            ".MuiButtonBase-root": { marginRight: "-6px" },
+          },
+        },
+      },
+    },
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          marginLeft: "-8px",
+          ".MuiFormControlLabel-label": {
+            color: "#333333",
+            lineHeight: "20px",
+          },
+        },
       },
     },
     MuiCheckbox: {
       styleOverrides: {
         root: {
+          padding: "8px",
           "& .MuiAvatar-root": {
-            height: "16px",
-            width: "16px",
+            height: "20px",
+            width: "20px",
           },
         },
       },
     },
     MuiRadio: {
       styleOverrides: {
-        root: {
-          "& .MuiAvatar-root": {
-            height: "16px",
-            width: "16px",
-          },
-        },
+        root: {},
       },
     },
     MuiAvatar: {
@@ -168,78 +215,179 @@ myCustomTheme = createTheme(myCustomTheme, {
         root: {
           height: "auto",
           width: "auto",
+          borderRadius: 0,
+        },
+      },
+    },
+    MuiList: {
+      styleOverrides: {
+        root: {
+          "&.MuiMenu-list": {
+            minWidth: "170px",
+            padding: "10px 0",
+          },
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          "&.MuiMenu-paper": {
+            borderRadius: "8px",
+            boxShadow: "0 4px 16px 0 rgba(169, 169, 169, 0.5)",
+          },
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          padding: "10px 16px",
+          "&:hover": {
+            backgroundColor: "#F9F9F9",
+          },
         },
       },
     },
     MuiCard: {
       styleOverrides: {
         root: {
-          // boxShadow: "none",
-          // border: "1px solid #EAEAEA",
-          // borderRadius: "10px",
-          // height: "100%",
-        },
-      },
-    },
-    MuiTableContainer: {
-      styleOverrides: {
-        root: {
-          // border: "none",
-          // boxShadow: "none",
-        },
-      },
-    },
-    MuiTable: {
-      styleOverrides: {
-        root: {
-          "& .MuiTableCell-head": {
-            // padding: "8px 10px",
-            // fontSize: "15px",
-            // lineHeight: "20px",
-            // color: "#9C9C9C",
-            // fontWeight: 400,
-            // border: "none",
-          },
-          "& .MuiTableCell-body": {
-            // padding: "4px 10px",
-            // fontSize: "15px",
-            // lineHeight: "20px",
-            // color: "#4B4B4B",
-            // border: "none",
-            // borderTop: "1px solid #EAEAEA",
-            // whiteSpace: "nowrap",
-          },
+          boxShadow: "0 0 16px 0 rgba(0, 0, 0, 0.1)",
+          borderRadius: "12px",
+          height: "100%",
         },
       },
     },
     MuiTabs: {
       styleOverrides: {
         root: {
-          // borderBottom: "1px solid #E9E9E9",
-          // minHeight: "0",
+          minHeight: "0",
           "& .MuiTabs-scroller": {
-            // paddingBottom: "8px",
-            // [myCustomTheme.breakpoints.down("md")]: {
-            //   paddingBottom: "0",
-            // },
+            ".MuiTabs-flexContainer": {
+              paddingBottom: "1px",
+              borderBottom: "1px solid #DDDDDD",
+            },
           },
-          "& .MuiTabs-indicator": { height: "3px" },
+          "& .MuiTabs-indicator": {
+            height: "3px",
+            borderTopLeftRadius: "5px",
+            borderTopRightRadius: "5px",
+          },
         },
       },
     },
     MuiTab: {
       styleOverrides: {
         root: {
-          // fontSize: "18px",
-          // lineHeight: "24px",
-          // fontWeight: 300,
-          // minWidth: "60px",
-          // textTransform: "capitalize",
-          // padding: "8px",
-          // minHeight: "0",
-          // "&.Mui-selected": { fontWeight: 500 },
-          // "&.MuiButtonBase-root": { padding: "8px" },
-          // "&.MuiButtonBase-root:not(:last-child)": { marginRight: "14px" },
+          fontSize: "15px",
+          lineHeight: "20px",
+          fontWeight: 500,
+          minWidth: "60px",
+          textTransform: "capitalize",
+          padding: "8px",
+          minHeight: "0",
+          "&.MuiButtonBase-root": { padding: "6px" },
+        },
+      },
+    },
+    MuiTableRow: {
+      styleOverrides: {
+        root: {
+          "&:last-child": {
+            ".MuiTableCell-body": { borderBottom: "0" },
+          },
+        },
+      },
+    },
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          whiteSpace: "nowrap",
+          "&.MuiTableCell-head": {
+            fontSize: "16px",
+            lineHeight: "24px",
+            fontWeight: 500,
+            color: "#333333",
+            borderBottomColor: "#BBBBBB",
+            padding: "10px 18px",
+            div: {
+              display: "flex",
+              alignItems: "center",
+              "&.text-center": {
+                justifyContent: "center",
+              },
+            },
+          },
+          "&.MuiTableCell-body": {
+            fontSize: "16px",
+            lineHeight: "24px",
+            color: "#898989",
+            borderBottomColor: "#EEEEEE",
+            padding: "7px 18px 6px",
+            ".button-wrapper": {
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              ".MuiIconButton-root": {
+                "&:first-of-type": {
+                  marginRight: "-3px",
+                },
+                "&:last-of-type": {
+                  marginLeft: "-3px",
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    MuiTablePagination: {
+      styleOverrides: {
+        root: {
+          ".MuiToolbar-root": {
+            paddingLeft: "0",
+          },
+        },
+      },
+    },
+    MuiAlert: {
+      styleOverrides: {
+        root: {
+          boxShadow: "none",
+          padding: "3px 12px",
+          alignItems: "center",
+          ".MuiAlert-message": {
+            fontSize: "16px",
+            lineHeight: "20px",
+          },
+          ".MuiAlert-icon": {
+            marginRight: "10px",
+            display: "block",
+            padding: 0,
+          },
+          ".MuiAlert-action": {
+            padding: 0,
+          },
+          "&.MuiAlert-outlinedSuccess": {
+            backgroundColor: "#ECFFDC",
+            borderColor: "#84D344",
+            color: "#6CC922",
+          },
+          "&.MuiAlert-outlinedWarning": {
+            backgroundColor: "#FFFBED",
+            borderColor: "#E1C533",
+            color: "#D9BA18",
+          },
+          "&.MuiAlert-outlinedInfo": {
+            backgroundColor: "#F3F8FF",
+            borderColor: "#5096FF",
+            color: "#5096FF",
+          },
+          "&.MuiAlert-outlinedError": {
+            backgroundColor: "#FEEEEE",
+            borderColor: "#F16D5A",
+            color: "#F16D5A",
+          },
         },
       },
     },

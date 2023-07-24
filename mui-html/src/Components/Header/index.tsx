@@ -1,103 +1,198 @@
-// import { Button, FormControl, Input, InputAdornment } from '@mui/material'
-// import IconButton from '@mui/material/IconButton';
-// import { Link } from 'react-router-dom';
-// import { adminUser, arrowDownIcon, LogoBlack, messageIcon, mobileLogo, notificationIcon, searchIcon } from '../../assets/images';
-// import * as React from 'react';
-// import Menu from '@mui/material/Menu';
-// import MenuItem from '@mui/material/MenuItem';
-// import Divider from '@mui/material/Divider';
-// import OutlinedInput from '@mui/material/OutlinedInput';
+import {
+  Avatar,
+  Badge,
+  Button,
+  FormControl,
+  Hidden,
+  InputAdornment,
+  Typography,
+} from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import { Link } from "react-router-dom";
+import * as React from "react";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import {
+  downArrowIC,
+  logo,
+  logoutIC,
+  menuIC,
+  notificationsIC,
+  profileIC,
+  searchBlackIC,
+  searchIC,
+  settingsIC,
+  userImg,
+} from "../../assets/images";
 
 const Header: React.FC = () => {
-  // const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
-  // const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-  //     setAnchorEl(event.currentTarget);
-  // };
-  // const handleClose = () => {
-  //     setAnchorEl(null);
-  // };
+  const [anchorProfileEl, setAnchorProfileEl] =
+    React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorProfileEl);
+  const handleProfileClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorProfileEl(event.currentTarget);
+  };
+  const handleProfileClose = () => {
+    setAnchorProfileEl(null);
+  };
 
-  // const open = Boolean(anchorEl);
-  // const id = open ? 'simple-popover' : undefined;
+  const [anchorNotificationEl, setAnchorNotificationEl] =
+    React.useState<null | HTMLElement>(null);
+  const openNotification = Boolean(anchorNotificationEl);
+  const handleNotificationClick = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    setAnchorNotificationEl(event.currentTarget);
+  };
+  const handleNotificationClose = () => {
+    setAnchorNotificationEl(null);
+  };
 
   return (
     <>
-      {/* <div className="overlay" onClick={e => document.body.classList.remove('show-nav', 'show-searchbar')}></div>
-            <header className='header'>
-                <Button onClick={e => document.body.classList.toggle('show-nav')} className="nav-toggler">
-                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.125 18.75H21.875M3.125 6.25H21.875H3.125ZM3.125 12.5H21.875H3.125Z" stroke="#9C9C9C" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </Button>
-                <Link to="#" title='Company'>
-                    <img src={LogoBlack} alt="Company" className='logo' />
-                    <img src={mobileLogo} alt="Company" className='mobile-logo' />
-                </Link>
-                <form className="serchbar-form">
-                    <FormControl variant="outlined">
-                        <OutlinedInput
-                            id="outlined-adornment-password"
-                            type={'text'}
-                            placeholder="Search"
-                            endAdornment={
-                                <InputAdornment position="end">
-                                    <IconButton
-                                        edge="end"
-                                    >
-                                         <img src={searchIcon} alt="Search Icon" />
-                                    </IconButton>
-                                </InputAdornment>
-                            }
-                        />
-                    </FormControl>
-                </form>
-                <div className='popover-block search-toggler'>
-                    <IconButton className='custom-btn' onClick={e => document.body.classList.add('show-searchbar')}>
-                        <img src={searchIcon} alt="Icon" />
-                    </IconButton>
-                </div>
-                <div className='popover-block message'>
-                    <IconButton className='custom-btn'>
-                        <img src={messageIcon} alt="Icon" />
-                    </IconButton>
-                </div>
-                <div className='popover-block notification'>
-                    <IconButton className='custom-btn'>
-                        <img src={notificationIcon} alt="Icon" />
-                    </IconButton>
-                </div>
-                <Divider orientation="vertical" variant="middle" flexItem sx={{ mx: "11px", borderColor: "rgb(156 156 156 / 50%)" }} />
-                <div className="user-navigation">
-                    <Button
-                        id="basic-button"
-                        aria-controls={open ? 'basic-menu' : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={open ? 'true' : undefined}
-                        onClick={handleClick}
-                    >
-                        <img src={adminUser} alt="user Profile" className='user-profile' />
-                        <p>John Doe</p>
-                        <img src={arrowDownIcon} alt="Arrow" className='arrow-icon' />
-                    </Button>
-                </div>
-                <Menu
-                    id="basic-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    MenuListProps={{
-                        'aria-labelledby': 'basic-button',
-                    }}
-                    transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'left',
-                    }}
-                >
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose} component={Link} to="/login">Logout</MenuItem>
-                </Menu>
-            </header> */}
+      <div
+        className="overlay"
+        onClick={(e) =>
+          document.body.classList.remove("show-nav", "show-searchbar")
+        }
+      ></div>
+      <header className="header">
+        <Link to="/" title="Logo" className="logo">
+          <Avatar src={logo} alt="Logo" />
+          <Typography variant="caption">MY THEME</Typography>
+        </Link>
+        <IconButton
+          onClick={(e) => document.body.classList.toggle("show-nav")}
+          className="nav-toggler"
+          color="primary"
+        >
+          <Avatar src={menuIC} alt="Menu" />
+        </IconButton>
+        <FormControl variant="outlined">
+          <OutlinedInput
+            id="search"
+            placeholder="Search Here..."
+            type="text"
+            startAdornment={
+              <InputAdornment position="start">
+                <IconButton edge="start" color="primary">
+                  <Avatar src={searchIC} alt="Search" />
+                </IconButton>
+              </InputAdornment>
+            }
+          />
+        </FormControl>
+        <Hidden smUp>
+          <IconButton
+            color="primary"
+            className="search-btn"
+            onClick={(e) => document.body.classList.toggle("show-searchbar")}
+          >
+            <Avatar src={searchBlackIC} alt="Searcg" />
+          </IconButton>
+        </Hidden>
+        <IconButton
+          id="notification-button"
+          aria-controls={openNotification ? "notification-menu" : undefined}
+          aria-haspopup="true"
+          aria-expanded={openNotification ? "true" : undefined}
+          onClick={handleNotificationClick}
+          className="notification-btn"
+          color="primary"
+        >
+          <Badge badgeContent={2} color="primary">
+            <Avatar src={notificationsIC} alt="Notification" />
+          </Badge>
+        </IconButton>
+        <Menu
+          id="notification-menu"
+          anchorEl={anchorNotificationEl}
+          open={openNotification}
+          onClose={handleNotificationClose}
+          MenuListProps={{
+            "aria-labelledby": "notification-button",
+          }}
+          className="notification-menu"
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "right",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+        >
+          <MenuItem onClick={handleNotificationClose}>
+            <Typography variant="body1">Notification</Typography>
+          </MenuItem>
+          <MenuItem onClick={handleNotificationClose}>
+            <Typography variant="body1">Lorem ipsum amet</Typography>
+            <Typography variant="body2">18 Dec 2021</Typography>
+          </MenuItem>
+          <MenuItem onClick={handleNotificationClose}>
+            <Typography variant="body1">Lorem ipsum amet</Typography>
+            <Typography variant="body2">18 Dec 2021</Typography>
+          </MenuItem>
+          <MenuItem onClick={handleNotificationClose}>
+            <Typography variant="body1">Lorem ipsum amet</Typography>
+            <Typography variant="body2">18 Dec 2021</Typography>
+          </MenuItem>
+          <MenuItem onClick={handleNotificationClose}>
+            <Typography variant="body1">Lorem ipsum amet</Typography>
+            <Typography variant="body2">18 Dec 2021</Typography>
+          </MenuItem>
+          <MenuItem onClick={handleNotificationClose}>
+            <Typography variant="body1">Lorem ipsum amet</Typography>
+            <Typography variant="body2">18 Dec 2021</Typography>
+          </MenuItem>
+        </Menu>
+        <Button
+          id="basic-button"
+          aria-controls={open ? "basic-menu" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+          onClick={handleProfileClick}
+          variant="text"
+          color="primary"
+          className="profile-btn"
+        >
+          <Avatar src={userImg} alt="User Profile" />
+          <Typography variant="body1">Jane Cooper</Typography>
+          <Avatar src={downArrowIC} alt="Down Arrow" />
+        </Button>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorProfileEl}
+          open={open}
+          onClose={handleProfileClose}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "right",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+          className="profile-menu"
+        >
+          <MenuItem onClick={handleProfileClose}>
+            <Avatar src={profileIC} alt="Profile" />
+            <Typography variant="body1">Profile</Typography>
+          </MenuItem>
+          <MenuItem onClick={handleProfileClose}>
+            <Avatar src={settingsIC} alt="Setting" />
+            <Typography variant="body1">Setting</Typography>
+          </MenuItem>
+          <MenuItem onClick={handleProfileClose} component={Link} to="/login">
+            <Avatar src={logoutIC} alt="Logout" />
+            <Typography variant="body1">Logout</Typography>
+          </MenuItem>
+        </Menu>
+      </header>
     </>
   );
 };
