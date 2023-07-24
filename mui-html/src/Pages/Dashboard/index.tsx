@@ -41,6 +41,9 @@ import {
   Filler,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import AOS from "aos";
+import { useEffect } from "react";
+import "aos/dist/aos.css";
 import TableComponent from "../../Components/Table";
 
 // Chart
@@ -210,6 +213,13 @@ const Dashboard: React.FC = () => {
     setAnchorEl6(null);
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      easing: "ease-out",
+      once: true,
+    });
+  }, []);
   return (
     <>
       <Helmet>
@@ -219,7 +229,7 @@ const Dashboard: React.FC = () => {
         <Header />
         <Sidebar />
         <section className="main-content dashboard">
-          <Typography variant="h3" className="page-title target">
+          <Typography variant="h3" className="page-title" data-aos="fade-up">
             Dashboard
           </Typography>
           <Grid
@@ -227,7 +237,14 @@ const Dashboard: React.FC = () => {
             spacing={{ xs: 2, xl: 4 }}
             sx={{ pb: { xs: "16px", xl: "32px" } }}
           >
-            <Grid item xs={12} sm={6} xl={3}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              xl={3}
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <Link to="#" className="statistic-card red">
                 <div className="left-content">
                   <div className="statisctic-heading">
@@ -239,7 +256,14 @@ const Dashboard: React.FC = () => {
                 <CircularProgressbar value={50} text="50%" />
               </Link>
             </Grid>
-            <Grid item xs={12} sm={6} xl={3}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              xl={3}
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <Link to="#" className="statistic-card green">
                 <div className="left-content">
                   <div className="statisctic-heading">
@@ -251,7 +275,14 @@ const Dashboard: React.FC = () => {
                 <CircularProgressbar value={40} text="40%" />
               </Link>
             </Grid>
-            <Grid item xs={12} sm={6} xl={3}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              xl={3}
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <Link to="#" className="statistic-card blue">
                 <div className="left-content">
                   <div className="statisctic-heading">
@@ -263,7 +294,14 @@ const Dashboard: React.FC = () => {
                 <CircularProgressbar value={90} text="90%" />
               </Link>
             </Grid>
-            <Grid item xs={12} sm={6} xl={3}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              xl={3}
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
               <Link to="#" className="statistic-card pink">
                 <div className="left-content">
                   <div className="statisctic-heading">
@@ -281,7 +319,7 @@ const Dashboard: React.FC = () => {
             spacing={{ xs: 2, xl: 4 }}
             sx={{ pb: { xs: "16px", xl: "32px" } }}
           >
-            <Grid item xs={12} xl={8}>
+            <Grid item xs={12} xl={8} data-aos="fade-up" data-aos-delay="500">
               <Card className="sales-card">
                 <div className="card-header">
                   <Typography variant="h5">Sales Analysis</Typography>
@@ -299,7 +337,7 @@ const Dashboard: React.FC = () => {
                 <Line options={options} data={data} />
               </Card>
             </Grid>
-            <Grid item xs={12} xl={4}>
+            <Grid item xs={12} xl={4} data-aos="fade-up" data-aos-delay="600">
               <Card className="todo-list">
                 <div className="card-header">
                   <Typography variant="h5">To Do List</Typography>
@@ -574,8 +612,14 @@ const Dashboard: React.FC = () => {
               </Card>
             </Grid>
           </Grid>
-          <TableComponent />
-          <section className="copyright">
+          <div data-aos="fade-up" data-aos-delay="600">
+            <TableComponent />
+          </div>
+          <section
+            className="copyright"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
             <p>Copyright 2021. All rights reserved</p>
           </section>
         </section>

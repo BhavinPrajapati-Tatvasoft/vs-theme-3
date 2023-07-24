@@ -4,12 +4,9 @@ import {
   Button,
   Checkbox,
   FormControlLabel,
-  Grid,
-  Hidden,
   Typography,
   FormControl,
   InputLabel,
-  Input,
   InputAdornment,
   IconButton,
   Avatar,
@@ -24,10 +21,19 @@ import {
   showPasswordIC,
   userIC,
 } from "../../assets/images";
+import AOS from "aos";
+import { useEffect } from "react";
+import "aos/dist/aos.css";
 
 function Login() {
   const [showPassword, setShowPassword] = React.useState(true);
-
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      easing: "ease-out",
+      once: true,
+    });
+  }, []);
   return (
     <>
       <Helmet>
@@ -36,7 +42,7 @@ function Login() {
       <section className="login-wrapper">
         <div className="login-container">
           <div className="login-content">
-            <div className="inner-content">
+            <div className="inner-content" data-aos="fade-right">
               <Typography variant="h2">Welcome Back!</Typography>
               <Typography variant="body1">
                 Please login to to your account to enjoy all the benefits
@@ -44,7 +50,7 @@ function Login() {
             </div>
           </div>
           <div className="login-main">
-            <form>
+            <form data-aos="fade-up" data-aos-delay="200">
               <Link to="/" title="Logo" className="logo">
                 <Avatar src={logo} alt="Logo" />
                 <Typography variant="caption">MY THEME</Typography>

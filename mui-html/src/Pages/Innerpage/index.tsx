@@ -121,18 +121,24 @@ const Innerpage: React.FC = () => {
         <Header />
         <Sidebar />
         <section className="main-content inner">
-          <Typography variant="h3" className="page-title">
+          <Typography variant="h3" className="page-title" data-aos="fade-up">
             Innerpage
           </Typography>
-          <TableComponent />
+          <div data-aos="fade-up" data-aos-delay="200">
+            <TableComponent />
+          </div>
           <Card className="inner-card">
             {/* -------- first column start ---------  */}
-            <Typography variant="h5">Form Elements</Typography>
+            <Typography variant="h5" data-aos="fade-up" data-aos-delay="200">
+              Form Elements
+            </Typography>
             <TextField
               label="Name"
               fullWidth
               variant="outlined"
               sx={{ pb: { xs: "16px", xl: "20px" } }}
+              data-aos="fade-up"
+              data-aos-delay="300"
             />
             <TextField
               label="Email"
@@ -140,6 +146,8 @@ const Innerpage: React.FC = () => {
               fullWidth
               variant="outlined"
               sx={{ pb: { xs: "16px", xl: "20px" } }}
+              data-aos="fade-up"
+              data-aos-delay="400"
             />
             <TextField
               label="Textarea"
@@ -148,22 +156,38 @@ const Innerpage: React.FC = () => {
               rows={1.5}
               fullWidth
               sx={{ pb: { xs: "16px", xl: "22px" } }}
+              data-aos="fade-up"
+              data-aos-delay="500"
             />
             {/* -------- first column end ---------  */}
 
             {/* -------- second column start ---------  */}
             <section className="secondary-section">
-              <Typography variant="h5">Two Column</Typography>
+              <Typography variant="h5" data-aos="fade-up" data-aos-delay="200">
+                Two Column
+              </Typography>
               <Grid
                 container
                 columnSpacing={{ xs: 2, xl: 4 }}
                 rowSpacing={{ xs: 2, xl: 2.5 }}
                 sx={{ pb: { xs: "16px", xl: "22px" } }}
               >
-                <Grid item sm={6} xs={12}>
+                <Grid
+                  item
+                  sm={6}
+                  xs={12}
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
                   <TextField label="Name" fullWidth variant="outlined" />
                 </Grid>
-                <Grid item sm={6} xs={12}>
+                <Grid
+                  item
+                  sm={6}
+                  xs={12}
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
                   <TextField
                     label="Email"
                     type="email"
@@ -172,7 +196,13 @@ const Innerpage: React.FC = () => {
                     defaultValue="xyz@gmail.com"
                   />
                 </Grid>
-                <Grid item sm={6} xs={12}>
+                <Grid
+                  item
+                  sm={6}
+                  xs={12}
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                >
                   <FormControl fullWidth>
                     <InputLabel id="select-1">Dropdown</InputLabel>
                     <Select
@@ -195,7 +225,13 @@ const Innerpage: React.FC = () => {
                     </Select>
                   </FormControl>
                 </Grid>
-                <Grid item sm={6} xs={12}>
+                <Grid
+                  item
+                  sm={6}
+                  xs={12}
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                >
                   <FormControl fullWidth>
                     <InputLabel id="select-9">Dropdown</InputLabel>
                     <Select
@@ -224,17 +260,33 @@ const Innerpage: React.FC = () => {
 
             {/* -------- third column start ---------  */}
             <section className="secondary-section">
-              <Typography variant="h5">Three Column</Typography>
+              <Typography variant="h5" data-aos="fade-up" data-aos-delay="200">
+                Three Column
+              </Typography>
               <Grid
                 container
                 columnSpacing={{ xs: 2, xl: 4 }}
                 rowSpacing={{ xs: 2, xl: 2.5 }}
                 sx={{ pb: { xs: "16px", xl: "22px" } }}
               >
-                <Grid item xs={12} sm={6} lg={4}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
                   <TextField label="Name" fullWidth variant="outlined" />
                 </Grid>
-                <Grid item xs={12} sm={6} lg={4}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
                   <TextField
                     label="Name"
                     fullWidth
@@ -242,7 +294,14 @@ const Innerpage: React.FC = () => {
                     defaultValue="John Doe"
                   />
                 </Grid>
-                <Grid item xs={12} sm={6} lg={4}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                >
                   <TextField
                     label="Email"
                     type="email"
@@ -251,7 +310,14 @@ const Innerpage: React.FC = () => {
                     defaultValue="xyz@gmail.com"
                   />
                 </Grid>
-                <Grid item xs={12} sm={6} lg={4}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                >
                   <FormControl fullWidth>
                     <InputLabel id="select-2">Dropdown</InputLabel>
                     <Select
@@ -274,7 +340,14 @@ const Innerpage: React.FC = () => {
                     </Select>
                   </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={6} lg={4}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  data-aos="fade-up"
+                  data-aos-delay="700"
+                >
                   <FormControl fullWidth>
                     <InputLabel id="select-3">Dropdown</InputLabel>
                     <Select
@@ -297,7 +370,14 @@ const Innerpage: React.FC = () => {
                     </Select>
                   </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={6} lg={4}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  data-aos="fade-up"
+                  data-aos-delay="800"
+                >
                   <FormControl fullWidth>
                     <InputLabel id="select-4">Dropdown</InputLabel>
                     <Select
@@ -326,17 +406,35 @@ const Innerpage: React.FC = () => {
 
             {/* -------- four column start ---------  */}
             <section className="secondary-section">
-              <Typography variant="h5">Four Column</Typography>
+              <Typography variant="h5" data-aos="fade-up" data-aos-delay="200">
+                Four Column
+              </Typography>
               <Grid
                 container
                 columnSpacing={{ xs: 2, xl: 4 }}
                 rowSpacing={{ xs: 2, xl: 2.5 }}
                 sx={{ pb: "22px" }}
               >
-                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  xl={3}
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
                   <TextField label="Name" fullWidth variant="outlined" />
                 </Grid>
-                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  xl={3}
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
                   <TextField
                     label="Email"
                     type="email"
@@ -345,7 +443,15 @@ const Innerpage: React.FC = () => {
                     defaultValue="xyz@gmail.com"
                   />
                 </Grid>
-                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  xl={3}
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                >
                   <TextField
                     label="Email"
                     type="email"
@@ -353,7 +459,15 @@ const Innerpage: React.FC = () => {
                     variant="outlined"
                   />
                 </Grid>
-                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  xl={3}
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                >
                   <TextField
                     label="Name"
                     fullWidth
@@ -361,7 +475,15 @@ const Innerpage: React.FC = () => {
                     defaultValue="John Doe"
                   />
                 </Grid>
-                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  xl={3}
+                  data-aos="fade-up"
+                  data-aos-delay="700"
+                >
                   <FormControl fullWidth>
                     <InputLabel id="select-5">Dropdown</InputLabel>
                     <Select
@@ -384,7 +506,15 @@ const Innerpage: React.FC = () => {
                     </Select>
                   </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  xl={3}
+                  data-aos="fade-up"
+                  data-aos-delay="800"
+                >
                   <FormControl fullWidth>
                     <InputLabel id="select-6">Dropdown</InputLabel>
                     <Select
@@ -407,7 +537,15 @@ const Innerpage: React.FC = () => {
                     </Select>
                   </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  xl={3}
+                  data-aos="fade-up"
+                  data-aos-delay="900"
+                >
                   <FormControl fullWidth>
                     <InputLabel id="select-7">Dropdown</InputLabel>
                     <Select
@@ -430,7 +568,15 @@ const Innerpage: React.FC = () => {
                     </Select>
                   </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  lg={4}
+                  xl={3}
+                  data-aos="fade-up"
+                  data-aos-delay="1000"
+                >
                   <FormControl fullWidth>
                     <InputLabel id="select-8">Dropdown</InputLabel>
                     <Select
@@ -459,14 +605,28 @@ const Innerpage: React.FC = () => {
 
             {/* -------- other element start ---------  */}
             <div className="secondary-section other-elements">
-              <Typography variant="h5" className="other-heading">
+              <Typography
+                variant="h5"
+                className="other-heading"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 Other Form Elements
               </Typography>
 
-              <Typography variant="h6" className="upload-heading">
+              <Typography
+                variant="h6"
+                className="upload-heading"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 File Upload
               </Typography>
-              <div className="file-upload">
+              <div
+                className="file-upload"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <Button
                   variant="contained"
                   component="label"
@@ -482,10 +642,19 @@ const Innerpage: React.FC = () => {
                 <p>No file uploaded</p>
               </div>
 
-              <Typography variant="h6" className="check-radio-title">
+              <Typography
+                variant="h6"
+                className="check-radio-title"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 Check Box
               </Typography>
-              <div className="check-group">
+              <div
+                className="check-group"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <FormControlLabel
                   control={
                     <Checkbox
@@ -552,10 +721,19 @@ const Innerpage: React.FC = () => {
                 />
               </div>
 
-              <Typography variant="h6" className="check-radio-title">
+              <Typography
+                variant="h6"
+                className="check-radio-title"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 Radio Button
               </Typography>
-              <div className="radio-group">
+              <div
+                className="radio-group"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <RadioGroup defaultValue="Option 1" name="radio-buttons-group">
                   <FormControlLabel
                     value="Option 1"
@@ -626,10 +804,19 @@ const Innerpage: React.FC = () => {
                 </RadioGroup>
               </div>
 
-              <Typography variant="h6" className="buttons-heading">
+              <Typography
+                variant="h6"
+                className="buttons-heading"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 Buttons
               </Typography>
-              <div className="btn-group">
+              <div
+                className="btn-group"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <Button variant="contained" title="Primary">
                   Primary
                 </Button>
@@ -644,8 +831,14 @@ const Innerpage: React.FC = () => {
                 </Button>
               </div>
 
-              <Typography variant="h6">Alerts</Typography>
-              <div className="alert-group">
+              <Typography variant="h6" data-aos="fade-up" data-aos-delay="200">
+                Alerts
+              </Typography>
+              <div
+                className="alert-group"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <Alert
                   severity="success"
                   variant="outlined"
@@ -684,6 +877,7 @@ const Innerpage: React.FC = () => {
                 </Alert>
                 <Alert
                   severity="error"
+                  variant="outlined"
                   icon={<Avatar src={alertErrorIC} alt="Info" />}
                   action={
                     <IconButton>
@@ -699,51 +893,60 @@ const Innerpage: React.FC = () => {
 
             {/* -------- Tab section start ---------  */}
             <div className="secondary-section tab-wrapper">
-              <Typography variant="h5">Tabs</Typography>
-              <Tabs
-                value={value}
-                scrollButtons="auto"
-                variant="scrollable"
-                onChange={tabHandleChange}
-                aria-label="basic tabs example"
-              >
-                <Tab label="Tab 1" {...a11yProps(0)} />
-                <Tab label="Tab 2" {...a11yProps(1)} />
-                <Tab label="Tab 3" {...a11yProps(2)} />
-              </Tabs>
-              <TabPanel value={value} index={0}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu
-                arcu, euismod mattis velit. Id lacus faucibus morbi pulvinar
-                integer natoque risus fermentum, nulla. Sit sapien arcu enim
-                cursus quam nunc. Arcu ipsum amet imperdiet sed posuere Lorem
-                ipsum dolor sit amet, consectetur adipiscing elit. Eu arcu,
-                euismod mattis velit. Id lacus faucibus morbi pulvinar integer
-                natoque risus fermentum, nulla. Sit sapien arcu enim cursus quam
-                nunc. Arcu ipsum amet imperdiet sed posuere.
-              </TabPanel>
-              <TabPanel value={value} index={1}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas a varius nulla. Proin accumsan nunc lacinia ipsum
-                venenatis varius. Proin rutrum, diam id facilisis hendrerit, dui
-                est malesuada risus, sed sollicitudin felis eros vitae libero.
-                Integer in magna lectus. Vestibulum facilisis ultrices libero
-                sed tincidunt. Nullam vitae mollis diam, eu posuere diam.
-                Suspendisse potenti.
-              </TabPanel>
-              <TabPanel value={value} index={2}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas a varius nulla. Proin accumsan nunc lacinia ipsum
-                venenatis varius. Proin rutrum, diam id facilisis hendrerit, dui
-                est malesuada risus, sed sollicitudin felis eros vitae libero.
-                Integer in magna lectus. Vestibulum facilisis ultrices libero
-                sed tincidunt. Nullam vitae mollis diam, eu posuere diam.
-                Suspendisse potenti. Proin pellentesque egestas justo a tempor.
-                Donec lorem sem, dictum at consequat et, maximus quis mauris.
-              </TabPanel>
+              <Typography variant="h5" data-aos="fade-up" data-aos-delay="200">
+                Tabs
+              </Typography>
+              <div data-aos="fade-up" data-aos-delay="300">
+                <Tabs
+                  value={value}
+                  scrollButtons="auto"
+                  variant="scrollable"
+                  onChange={tabHandleChange}
+                  aria-label="basic tabs example"
+                >
+                  <Tab label="Tab 1" {...a11yProps(0)} />
+                  <Tab label="Tab 2" {...a11yProps(1)} />
+                  <Tab label="Tab 3" {...a11yProps(2)} />
+                </Tabs>
+                <TabPanel value={value} index={0}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu
+                  arcu, euismod mattis velit. Id lacus faucibus morbi pulvinar
+                  integer natoque risus fermentum, nulla. Sit sapien arcu enim
+                  cursus quam nunc. Arcu ipsum amet imperdiet sed posuere Lorem
+                  ipsum dolor sit amet, consectetur adipiscing elit. Eu arcu,
+                  euismod mattis velit. Id lacus faucibus morbi pulvinar integer
+                  natoque risus fermentum, nulla. Sit sapien arcu enim cursus
+                  quam nunc. Arcu ipsum amet imperdiet sed posuere.
+                </TabPanel>
+                <TabPanel value={value} index={1}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Maecenas a varius nulla. Proin accumsan nunc lacinia ipsum
+                  venenatis varius. Proin rutrum, diam id facilisis hendrerit,
+                  dui est malesuada risus, sed sollicitudin felis eros vitae
+                  libero. Integer in magna lectus. Vestibulum facilisis ultrices
+                  libero sed tincidunt. Nullam vitae mollis diam, eu posuere
+                  diam. Suspendisse potenti.
+                </TabPanel>
+                <TabPanel value={value} index={2}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Maecenas a varius nulla. Proin accumsan nunc lacinia ipsum
+                  venenatis varius. Proin rutrum, diam id facilisis hendrerit,
+                  dui est malesuada risus, sed sollicitudin felis eros vitae
+                  libero. Integer in magna lectus. Vestibulum facilisis ultrices
+                  libero sed tincidunt. Nullam vitae mollis diam, eu posuere
+                  diam. Suspendisse potenti. Proin pellentesque egestas justo a
+                  tempor. Donec lorem sem, dictum at consequat et, maximus quis
+                  mauris.
+                </TabPanel>
+              </div>
             </div>
             {/* -------- Tab section end ---------  */}
           </Card>
-          <section className="copyright">
+          <section
+            className="copyright"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <p>Copyright 2021. All rights reserved</p>
           </section>
         </section>

@@ -21,10 +21,10 @@ myCustomTheme = createTheme(myCustomTheme, {
       lineHeight: "50px",
       fontWeight: 600,
       color: "#FFFFFF",
-      // [myCustomTheme.breakpoints.down("lg")]: {
-      //   fontSize: "40px",
-      //   lineHeight: "46px",
-      // },
+      [myCustomTheme.breakpoints.down("md")]: {
+        fontSize: "32px",
+        lineHeight: "40px",
+      },
     },
     h3: {
       fontSize: "28px",
