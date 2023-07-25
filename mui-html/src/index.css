@@ -304,6 +304,7 @@ input[type="search"]::-webkit-search-results-decoration {
   overflow: hidden;
   position: relative;
   z-index: 1;
+  box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.25);
 }
 .login-content {
   background-color: #23c68b;
@@ -599,10 +600,18 @@ input[type="search"]::-webkit-search-results-decoration {
   text-overflow: ellipsis;
   max-width: 100%;
 }
-.statistic-card .left-content > span {
+.statistic-card .left-content .number {
+  display: flex;
+  align-items: center;
+}
+.statistic-card .left-content .number span {
   font-size: 24px;
   line-height: 36px;
   color: #4f4f4f;
+}
+.statistic-card .left-content .number span:first-child {
+  min-width: 80px;
+  display: block;
 }
 
 /* Circular Progress */
@@ -773,6 +782,12 @@ input[type="search"]::-webkit-search-results-decoration {
   color: #333333;
   padding: 0 18px;
 }
+.MuiDataGrid-root
+  .MuiDataGrid-main
+  .MuiDataGrid-columnHeader
+  .MuiButtonBase-root {
+  visibility: visible;
+}
 .MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-cell {
   color: #898989;
   font-size: 16px;
@@ -834,8 +849,9 @@ div.MuiTablePagination-root.MuiTablePagination-root {
   margin-right: 24px;
 }
 .MuiTablePagination-root .MuiInputBase-root .MuiSelect-select {
+  text-align: left;
   text-align-last: left;
-  padding: 3px 4px 3px 12px;
+  padding: 4px 4px 4px 12px;
 }
 .MuiTablePagination-root .MuiInputBase-root svg {
   background: url("../src/assets/images/down-arrow-ic.svg") center no-repeat;
@@ -873,7 +889,9 @@ div.MuiTablePagination-root.MuiTablePagination-root {
   background: url("../src/assets//images/next-ic.svg") center no-repeat;
   background-size: 20px;
 }
-
+.MuiMenu-paper.table-menu .MuiList-root {
+  min-width: auto;
+}
 .copyright {
   display: flex;
   align-items: center;
@@ -1154,7 +1172,7 @@ div.MuiTablePagination-root.MuiTablePagination-root {
     width: 100%;
   }
   .table-header-menu .MuiMenu-paper {
-    width: calc(100% - 90px);
+    width: calc(100% - 72px);
   }
   .MuiTablePagination-root .MuiInputBase-root {
     min-width: auto;
@@ -1171,6 +1189,12 @@ div.MuiTablePagination-root.MuiTablePagination-root {
     flex-grow: 1;
     min-width: 100%;
     margin-left: 0 !important;
+    justify-content: center;
+  }
+  .MuiTablePagination-root .MuiToolbar-root .MuiTablePagination-selectLabel {
+    display: block;
+  }
+  .MuiDataGrid-root .MuiDataGrid-footerContainer {
     justify-content: center;
   }
 }

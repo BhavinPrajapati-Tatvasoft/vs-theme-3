@@ -237,6 +237,17 @@ const TableComponent: React.FC = () => {
       <DataGrid
         rows={rows}
         columns={columns}
+        slotProps={{
+          pagination: {
+            SelectProps: {
+              MenuProps: {
+                classes: {
+                  paper: "table-menu",
+                },
+              },
+            },
+          },
+        }}
         initialState={{
           pagination: {
             paginationModel: { page: 0, pageSize: 5 },

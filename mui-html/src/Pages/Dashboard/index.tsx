@@ -60,7 +60,6 @@ ChartJS.register(
 export const options = {
   responsive: true,
   maintainAspectRatio: true,
-  radius: 0,
   plugins: {
     legend: {
       display: false,
@@ -108,6 +107,9 @@ export const data = {
       borderColor: "#74E4BC",
       backgroundColor: "#74E4BC",
       tension: 0.3,
+      pointBackgroundColor: "#23C68B",
+      pointBorderWidth: 2,
+      pointBorderColor: "#23C68B",
     },
     {
       label: "Dataset 2",
@@ -116,6 +118,9 @@ export const data = {
       borderColor: "#D0E2FF",
       backgroundColor: "#D0E2FF",
       tension: 0.3,
+      pointBackgroundColor: "#5096FF",
+      pointBorderWidth: 2,
+      pointBorderColor: "#5096FF",
     },
   ],
 };
@@ -213,13 +218,106 @@ const Dashboard: React.FC = () => {
     setAnchorEl6(null);
   };
 
+  const [anchorEl7, setAnchorEl7] = React.useState<null | HTMLElement>(null);
+  const open7 = Boolean(anchorEl7);
+  const handleClick7 = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl7(event.currentTarget);
+  };
+  const handleClose7 = () => {
+    setAnchorEl7(null);
+  };
+
+  const [anchorEl8, setAnchorEl8] = React.useState<null | HTMLElement>(null);
+  const open8 = Boolean(anchorEl8);
+  const handleClick8 = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl8(event.currentTarget);
+  };
+  const handleClose8 = () => {
+    setAnchorEl8(null);
+  };
+
+  const [anchorEl9, setAnchorEl9] = React.useState<null | HTMLElement>(null);
+  const open9 = Boolean(anchorEl9);
+  const handleClick9 = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl9(event.currentTarget);
+  };
+  const handleClose9 = () => {
+    setAnchorEl9(null);
+  };
+
+  const [anchorEl10, setAnchorEl10] = React.useState<null | HTMLElement>(null);
+  const open10 = Boolean(anchorEl10);
+  const handleClick10 = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl10(event.currentTarget);
+  };
+  const handleClose10 = () => {
+    setAnchorEl10(null);
+  };
+
+  const [anchorEl11, setAnchorEl11] = React.useState<null | HTMLElement>(null);
+  const open11 = Boolean(anchorEl11);
+  const handleClick11 = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl11(event.currentTarget);
+  };
+  const handleClose11 = () => {
+    setAnchorEl11(null);
+  };
+
+  const [anchorEl12, setAnchorEl12] = React.useState<null | HTMLElement>(null);
+  const open12 = Boolean(anchorEl12);
+  const handleClick12 = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl12(event.currentTarget);
+  };
+  const handleClose12 = () => {
+    setAnchorEl12(null);
+  };
+
+  const [anchorEl13, setAnchorEl13] = React.useState<null | HTMLElement>(null);
+  const open13 = Boolean(anchorEl13);
+  const handleClick13 = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl13(event.currentTarget);
+  };
+  const handleClose13 = () => {
+    setAnchorEl13(null);
+  };
+
+  const [anchorEl14, setAnchorEl14] = React.useState<null | HTMLElement>(null);
+  const open14 = Boolean(anchorEl14);
+  const handleClick14 = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl14(event.currentTarget);
+  };
+  const handleClose14 = () => {
+    setAnchorEl14(null);
+  };
+
+  const [anchorEl15, setAnchorEl15] = React.useState<null | HTMLElement>(null);
+  const open15 = Boolean(anchorEl15);
+  const handleClick15 = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl15(event.currentTarget);
+  };
+  const handleClose15 = () => {
+    setAnchorEl15(null);
+  };
+
+  const [anchorEl16, setAnchorEl16] = React.useState<null | HTMLElement>(null);
+  const open16 = Boolean(anchorEl16);
+  const handleClick16 = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl16(event.currentTarget);
+  };
+  const handleClose16 = () => {
+    setAnchorEl16(null);
+  };
+
   useEffect(() => {
-    AOS.init({
-      duration: 500,
-      easing: "ease-out",
-      once: true,
-    });
+    setTimeout(() => {
+      AOS.init({
+        duration: 500,
+        easing: "ease-out",
+        once: true,
+      });
+    }, 1000);
   }, []);
+
   return (
     <>
       <Helmet>
@@ -229,7 +327,12 @@ const Dashboard: React.FC = () => {
         <Header />
         <Sidebar />
         <section className="main-content dashboard">
-          <Typography variant="h3" className="page-title" data-aos="fade-up">
+          <Typography
+            variant="h3"
+            className="page-title"
+            data-aos="fade-in"
+            data-aos-delay="200"
+          >
             Dashboard
           </Typography>
           <Grid
@@ -251,7 +354,10 @@ const Dashboard: React.FC = () => {
                     <Avatar src={totalProfitIC} alt="Total Profit" />
                     <Typography variant="body1">Total Profit</Typography>
                   </div>
-                  <CountUp end={50123} suffix="K" separator="," />
+                  <div className="number">
+                    <CountUp end={50123} separator="," />
+                    <span>K</span>
+                  </div>
                 </div>
                 <CircularProgressbar value={50} text="50%" />
               </Link>
@@ -270,7 +376,10 @@ const Dashboard: React.FC = () => {
                     <Avatar src={totalPendingIC} alt="Total Pending" />
                     <Typography variant="body1">Total Pending</Typography>
                   </div>
-                  <CountUp end={30123} suffix="K" separator="," />
+                  <div className="number">
+                    <CountUp end={30123} separator="," />
+                    <span>K</span>
+                  </div>
                 </div>
                 <CircularProgressbar value={40} text="40%" />
               </Link>
@@ -289,7 +398,10 @@ const Dashboard: React.FC = () => {
                     <Avatar src={totalClosedIC} alt="Total Closed" />
                     <Typography variant="body1">Total Closed</Typography>
                   </div>
-                  <CountUp end={90123} suffix="K" separator="," />
+                  <div className="number">
+                    <CountUp end={90123} separator="," />
+                    <span>K</span>
+                  </div>
                 </div>
                 <CircularProgressbar value={90} text="90%" />
               </Link>
@@ -308,7 +420,10 @@ const Dashboard: React.FC = () => {
                     <Avatar src={totalLeadIC} alt="Total Lead" />
                     <Typography variant="body1">Total Lead</Typography>
                   </div>
-                  <CountUp end={50123} suffix="K" separator="," />
+                  <div className="number">
+                    <CountUp end={50123} separator="," />
+                    <span>K</span>
+                  </div>
                 </div>
                 <CircularProgressbar value={50} text="50%" />
               </Link>
@@ -604,10 +719,440 @@ const Dashboard: React.FC = () => {
                   </List>
                 </CustomTabPanel>
                 <CustomTabPanel value={tabValue} index={1}>
-                  Item Two
+                  <List className="todo-list-outer">
+                    <ListItem>
+                      <Checkbox
+                        icon={<Avatar src={checkboxDefaultIC} alt="Checkbox" />}
+                        checkedIcon={
+                          <Avatar src={checkboxcheckedIC} alt="Checkbox" />
+                        }
+                      />
+                      <div className="content-box">
+                        <Typography variant="body1">
+                          Lorem ipsum dolor sit
+                        </Typography>
+                        <Typography variant="body2">26 Jan 2021</Typography>
+                      </div>
+                      <IconButton
+                        id="button7"
+                        aria-controls={open7 ? "menu7" : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open7 ? "true" : undefined}
+                        onClick={handleClick7}
+                        color="primary"
+                      >
+                        <Avatar src={actionIC} alt="Action" />
+                      </IconButton>
+                      <Menu
+                        id="menu7"
+                        aria-labelledby="button7"
+                        anchorEl={anchorEl7}
+                        open={open7}
+                        onClose={handleClose7}
+                        anchorOrigin={{
+                          vertical: "bottom",
+                          horizontal: "right",
+                        }}
+                        transformOrigin={{
+                          vertical: "top",
+                          horizontal: "right",
+                        }}
+                      >
+                        <MenuItem onClick={handleClose7}>Item 1</MenuItem>
+                        <MenuItem onClick={handleClose7}>Item 2</MenuItem>
+                        <MenuItem onClick={handleClose7}>Item 3</MenuItem>
+                      </Menu>
+                    </ListItem>
+                    <ListItem>
+                      <Checkbox
+                        icon={<Avatar src={checkboxDefaultIC} alt="Checkbox" />}
+                        checkedIcon={
+                          <Avatar src={checkboxcheckedIC} alt="Checkbox" />
+                        }
+                      />
+                      <div className="content-box">
+                        <Typography variant="body1">
+                          Lorem dolor sit amet
+                        </Typography>
+                        <Typography variant="body2">26 Jan 2021</Typography>
+                      </div>
+                      <IconButton
+                        color="primary"
+                        id="button8"
+                        aria-controls={open8 ? "menu8" : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open8 ? "true" : undefined}
+                        onClick={handleClick8}
+                      >
+                        <Avatar src={actionIC} alt="Action" />
+                      </IconButton>
+                      <Menu
+                        id="menu8"
+                        aria-labelledby="button8"
+                        anchorEl={anchorEl8}
+                        open={open8}
+                        onClose={handleClose8}
+                        anchorOrigin={{
+                          vertical: "bottom",
+                          horizontal: "right",
+                        }}
+                        transformOrigin={{
+                          vertical: "top",
+                          horizontal: "right",
+                        }}
+                      >
+                        <MenuItem onClick={handleClose8}>Item 1</MenuItem>
+                        <MenuItem onClick={handleClose8}>Item 2</MenuItem>
+                        <MenuItem onClick={handleClose8}>Item 3</MenuItem>
+                      </Menu>
+                    </ListItem>
+                    <ListItem>
+                      <Checkbox
+                        icon={<Avatar src={checkboxDefaultIC} alt="Checkbox" />}
+                        checkedIcon={
+                          <Avatar src={checkboxcheckedIC} alt="Checkbox" />
+                        }
+                      />
+                      <div className="content-box">
+                        <Typography variant="body1">
+                          Lorem ipsum dolor sit amet
+                        </Typography>
+                        <Typography variant="body2">26 Jan 2021</Typography>
+                      </div>
+                      <IconButton
+                        color="primary"
+                        id="button9"
+                        aria-controls={open9 ? "menu9" : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open9 ? "true" : undefined}
+                        onClick={handleClick9}
+                      >
+                        <Avatar src={actionIC} alt="Action" />
+                      </IconButton>
+                      <Menu
+                        id="menu9"
+                        aria-labelledby="button9"
+                        anchorEl={anchorEl9}
+                        open={open9}
+                        onClose={handleClose9}
+                        anchorOrigin={{
+                          vertical: "bottom",
+                          horizontal: "right",
+                        }}
+                        transformOrigin={{
+                          vertical: "top",
+                          horizontal: "right",
+                        }}
+                      >
+                        <MenuItem onClick={handleClose9}>Item 1</MenuItem>
+                        <MenuItem onClick={handleClose9}>Item 2</MenuItem>
+                        <MenuItem onClick={handleClose9}>Item 3</MenuItem>
+                      </Menu>
+                    </ListItem>
+                    <ListItem>
+                      <Checkbox
+                        icon={<Avatar src={checkboxDefaultIC} alt="Checkbox" />}
+                        checkedIcon={
+                          <Avatar src={checkboxcheckedIC} alt="Checkbox" />
+                        }
+                      />
+                      <div className="content-box">
+                        <Typography variant="body1">
+                          Lorem ipsum dolor amet
+                        </Typography>
+                        <Typography variant="body2">26 Jan 2021</Typography>
+                      </div>
+                      <IconButton
+                        id="button10"
+                        color="primary"
+                        aria-controls={open10 ? "menu10" : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open10 ? "true" : undefined}
+                        onClick={handleClick10}
+                      >
+                        <Avatar src={actionIC} alt="Action" />
+                      </IconButton>
+                      <Menu
+                        id="menu10"
+                        aria-labelledby="button10"
+                        anchorEl={anchorEl10}
+                        open={open10}
+                        onClose={handleClose10}
+                        anchorOrigin={{
+                          vertical: "bottom",
+                          horizontal: "right",
+                        }}
+                        transformOrigin={{
+                          vertical: "top",
+                          horizontal: "right",
+                        }}
+                      >
+                        <MenuItem onClick={handleClose10}>Item 1</MenuItem>
+                        <MenuItem onClick={handleClose10}>Item 2</MenuItem>
+                        <MenuItem onClick={handleClose10}>Item 3</MenuItem>
+                      </Menu>
+                    </ListItem>
+                    <ListItem>
+                      <Checkbox
+                        icon={<Avatar src={checkboxDefaultIC} alt="Checkbox" />}
+                        checkedIcon={
+                          <Avatar src={checkboxcheckedIC} alt="Checkbox" />
+                        }
+                      />
+                      <div className="content-box">
+                        <Typography variant="body1">
+                          Lorem ipsum dolor sit amet
+                        </Typography>
+                        <Typography variant="body2">26 Jan 2021</Typography>
+                      </div>
+                      <IconButton
+                        color="primary"
+                        id="button11"
+                        aria-controls={open11 ? "menu11" : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open11 ? "true" : undefined}
+                        onClick={handleClick11}
+                      >
+                        <Avatar src={actionIC} alt="Action" />
+                      </IconButton>
+                      <Menu
+                        id="menu11"
+                        aria-labelledby="button11"
+                        anchorEl={anchorEl11}
+                        open={open11}
+                        onClose={handleClose11}
+                        anchorOrigin={{
+                          vertical: "bottom",
+                          horizontal: "right",
+                        }}
+                        transformOrigin={{
+                          vertical: "top",
+                          horizontal: "right",
+                        }}
+                      >
+                        <MenuItem onClick={handleClose11}>Item 1</MenuItem>
+                        <MenuItem onClick={handleClose11}>Item 2</MenuItem>
+                        <MenuItem onClick={handleClose11}>Item 3</MenuItem>
+                      </Menu>
+                    </ListItem>
+                  </List>
                 </CustomTabPanel>
                 <CustomTabPanel value={tabValue} index={2}>
-                  Item Three
+                  <List className="todo-list-outer">
+                    <ListItem>
+                      <Checkbox
+                        icon={<Avatar src={checkboxDefaultIC} alt="Checkbox" />}
+                        checkedIcon={
+                          <Avatar src={checkboxcheckedIC} alt="Checkbox" />
+                        }
+                      />
+                      <div className="content-box">
+                        <Typography variant="body1">Lorem ipsum</Typography>
+                        <Typography variant="body2">26 Jan 2021</Typography>
+                      </div>
+                      <IconButton
+                        id="button12"
+                        aria-controls={open12 ? "menu12" : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open12 ? "true" : undefined}
+                        onClick={handleClick12}
+                        color="primary"
+                      >
+                        <Avatar src={actionIC} alt="Action" />
+                      </IconButton>
+                      <Menu
+                        id="menu12"
+                        aria-labelledby="button12"
+                        anchorEl={anchorEl12}
+                        open={open12}
+                        onClose={handleClose12}
+                        anchorOrigin={{
+                          vertical: "bottom",
+                          horizontal: "right",
+                        }}
+                        transformOrigin={{
+                          vertical: "top",
+                          horizontal: "right",
+                        }}
+                      >
+                        <MenuItem onClick={handleClose12}>Item 1</MenuItem>
+                        <MenuItem onClick={handleClose12}>Item 2</MenuItem>
+                        <MenuItem onClick={handleClose12}>Item 3</MenuItem>
+                      </Menu>
+                    </ListItem>
+                    <ListItem>
+                      <Checkbox
+                        icon={<Avatar src={checkboxDefaultIC} alt="Checkbox" />}
+                        checkedIcon={
+                          <Avatar src={checkboxcheckedIC} alt="Checkbox" />
+                        }
+                      />
+                      <div className="content-box">
+                        <Typography variant="body1">
+                          Lorem ipsum dolor
+                        </Typography>
+                        <Typography variant="body2">26 Jan 2021</Typography>
+                      </div>
+                      <IconButton
+                        color="primary"
+                        id="button13"
+                        aria-controls={open13 ? "menu13" : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open13 ? "true" : undefined}
+                        onClick={handleClick13}
+                      >
+                        <Avatar src={actionIC} alt="Action" />
+                      </IconButton>
+                      <Menu
+                        id="menu13"
+                        aria-labelledby="button13"
+                        anchorEl={anchorEl13}
+                        open={open13}
+                        onClose={handleClose13}
+                        anchorOrigin={{
+                          vertical: "bottom",
+                          horizontal: "right",
+                        }}
+                        transformOrigin={{
+                          vertical: "top",
+                          horizontal: "right",
+                        }}
+                      >
+                        <MenuItem onClick={handleClose13}>Item 1</MenuItem>
+                        <MenuItem onClick={handleClose13}>Item 2</MenuItem>
+                        <MenuItem onClick={handleClose13}>Item 3</MenuItem>
+                      </Menu>
+                    </ListItem>
+                    <ListItem>
+                      <Checkbox
+                        icon={<Avatar src={checkboxDefaultIC} alt="Checkbox" />}
+                        checkedIcon={
+                          <Avatar src={checkboxcheckedIC} alt="Checkbox" />
+                        }
+                      />
+                      <div className="content-box">
+                        <Typography variant="body1">
+                          Lorem ipsum dolor sit amet
+                        </Typography>
+                        <Typography variant="body2">26 Jan 2021</Typography>
+                      </div>
+                      <IconButton
+                        color="primary"
+                        id="button14"
+                        aria-controls={open14 ? "menu14" : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open14 ? "true" : undefined}
+                        onClick={handleClick14}
+                      >
+                        <Avatar src={actionIC} alt="Action" />
+                      </IconButton>
+                      <Menu
+                        id="menu14"
+                        aria-labelledby="button14"
+                        anchorEl={anchorEl14}
+                        open={open14}
+                        onClose={handleClose14}
+                        anchorOrigin={{
+                          vertical: "bottom",
+                          horizontal: "right",
+                        }}
+                        transformOrigin={{
+                          vertical: "top",
+                          horizontal: "right",
+                        }}
+                      >
+                        <MenuItem onClick={handleClose14}>Item 1</MenuItem>
+                        <MenuItem onClick={handleClose14}>Item 2</MenuItem>
+                        <MenuItem onClick={handleClose14}>Item 3</MenuItem>
+                      </Menu>
+                    </ListItem>
+                    <ListItem>
+                      <Checkbox
+                        icon={<Avatar src={checkboxDefaultIC} alt="Checkbox" />}
+                        checkedIcon={
+                          <Avatar src={checkboxcheckedIC} alt="Checkbox" />
+                        }
+                      />
+                      <div className="content-box">
+                        <Typography variant="body1">
+                          Lorem ipsum sit amet
+                        </Typography>
+                        <Typography variant="body2">26 Jan 2021</Typography>
+                      </div>
+                      <IconButton
+                        id="button15"
+                        color="primary"
+                        aria-controls={open15 ? "menu15" : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open15 ? "true" : undefined}
+                        onClick={handleClick15}
+                      >
+                        <Avatar src={actionIC} alt="Action" />
+                      </IconButton>
+                      <Menu
+                        id="menu15"
+                        aria-labelledby="button15"
+                        anchorEl={anchorEl15}
+                        open={open15}
+                        onClose={handleClose15}
+                        anchorOrigin={{
+                          vertical: "bottom",
+                          horizontal: "right",
+                        }}
+                        transformOrigin={{
+                          vertical: "top",
+                          horizontal: "right",
+                        }}
+                      >
+                        <MenuItem onClick={handleClose15}>Item 1</MenuItem>
+                        <MenuItem onClick={handleClose15}>Item 2</MenuItem>
+                        <MenuItem onClick={handleClose15}>Item 3</MenuItem>
+                      </Menu>
+                    </ListItem>
+                    <ListItem>
+                      <Checkbox
+                        icon={<Avatar src={checkboxDefaultIC} alt="Checkbox" />}
+                        checkedIcon={
+                          <Avatar src={checkboxcheckedIC} alt="Checkbox" />
+                        }
+                      />
+                      <div className="content-box">
+                        <Typography variant="body1">
+                          Lorem ipsum dolor sit amet
+                        </Typography>
+                        <Typography variant="body2">26 Jan 2021</Typography>
+                      </div>
+                      <IconButton
+                        color="primary"
+                        id="button16"
+                        aria-controls={open16 ? "menu16" : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open16 ? "true" : undefined}
+                        onClick={handleClick16}
+                      >
+                        <Avatar src={actionIC} alt="Action" />
+                      </IconButton>
+                      <Menu
+                        id="menu16"
+                        aria-labelledby="button16"
+                        anchorEl={anchorEl16}
+                        open={open16}
+                        onClose={handleClose16}
+                        anchorOrigin={{
+                          vertical: "bottom",
+                          horizontal: "right",
+                        }}
+                        transformOrigin={{
+                          vertical: "top",
+                          horizontal: "right",
+                        }}
+                      >
+                        <MenuItem onClick={handleClose16}>Item 1</MenuItem>
+                        <MenuItem onClick={handleClose16}>Item 2</MenuItem>
+                        <MenuItem onClick={handleClose16}>Item 3</MenuItem>
+                      </Menu>
+                    </ListItem>
+                  </List>
                 </CustomTabPanel>
               </Card>
             </Grid>
@@ -615,11 +1160,7 @@ const Dashboard: React.FC = () => {
           <div data-aos="fade-up" data-aos-delay="600">
             <TableComponent />
           </div>
-          <section
-            className="copyright"
-            data-aos="fade-up"
-            data-aos-delay="600"
-          >
+          <section className="copyright">
             <p>Copyright 2021. All rights reserved</p>
           </section>
         </section>

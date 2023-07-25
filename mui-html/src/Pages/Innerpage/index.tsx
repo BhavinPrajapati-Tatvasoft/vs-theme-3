@@ -121,7 +121,12 @@ const Innerpage: React.FC = () => {
         <Header />
         <Sidebar />
         <section className="main-content inner">
-          <Typography variant="h3" className="page-title" data-aos="fade-up">
+          <Typography
+            variant="h3"
+            className="page-title"
+            data-aos="fade-in"
+            data-aos-delay="200"
+          >
             Innerpage
           </Typography>
           <div data-aos="fade-up" data-aos-delay="200">
