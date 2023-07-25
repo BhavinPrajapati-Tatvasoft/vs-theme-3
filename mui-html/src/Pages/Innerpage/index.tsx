@@ -170,7 +170,7 @@ const Innerpage: React.FC = () => {
                 container
                 columnSpacing={{ xs: 2, xl: 4 }}
                 rowSpacing={{ xs: 2, xl: 2.5 }}
-                sx={{ pb: { xs: "16px", xl: "22px" } }}
+                sx={{ pb: { xs: "16px", xl: "22px" }, overflow: "hidden" }}
               >
                 <Grid
                   item
@@ -267,7 +267,7 @@ const Innerpage: React.FC = () => {
                 container
                 columnSpacing={{ xs: 2, xl: 4 }}
                 rowSpacing={{ xs: 2, xl: 2.5 }}
-                sx={{ pb: { xs: "16px", xl: "22px" } }}
+                sx={{ pb: { xs: "16px", xl: "22px" }, overflow: "hidden" }}
               >
                 <Grid
                   item
@@ -413,7 +413,7 @@ const Innerpage: React.FC = () => {
                 container
                 columnSpacing={{ xs: 2, xl: 4 }}
                 rowSpacing={{ xs: 2, xl: 2.5 }}
-                sx={{ pb: "22px" }}
+                sx={{ pb: "22px", overflow: "hidden" }}
               >
                 <Grid
                   item
@@ -942,11 +942,7 @@ const Innerpage: React.FC = () => {
             </div>
             {/* -------- Tab section end ---------  */}
           </Card>
-          <section
-            className="copyright"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
+          <section className="copyright">
             <p>Copyright 2021. All rights reserved</p>
           </section>
         </section>

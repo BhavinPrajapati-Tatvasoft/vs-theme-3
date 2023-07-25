@@ -290,53 +290,12 @@ myCustomTheme = createTheme(myCustomTheme, {
         },
       },
     },
-    MuiTableRow: {
+    MuiDataGrid: {
       styleOverrides: {
         root: {
-          "&:last-child": {
-            ".MuiTableCell-body": { borderBottom: "0" },
-          },
-        },
-      },
-    },
-    MuiTableCell: {
-      styleOverrides: {
-        root: {
-          whiteSpace: "nowrap",
-          "&.MuiTableCell-head": {
-            fontSize: "16px",
-            lineHeight: "24px",
-            fontWeight: 500,
-            color: "#333333",
-            borderBottomColor: "#BBBBBB",
-            padding: "10px 18px",
-            div: {
-              display: "flex",
-              alignItems: "center",
-              "&.text-center": {
-                justifyContent: "center",
-              },
-            },
-          },
-          "&.MuiTableCell-body": {
-            fontSize: "16px",
-            lineHeight: "24px",
-            color: "#898989",
-            borderBottomColor: "#EEEEEE",
-            padding: "7px 18px 6px",
-            ".button-wrapper": {
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              ".MuiIconButton-root": {
-                "&:first-of-type": {
-                  marginRight: "-3px",
-                },
-                "&:last-of-type": {
-                  marginLeft: "-3px",
-                },
-              },
-            },
+          border: "none",
+          ".MuiDataGrid-columnSeparator": {
+            display: "none",
           },
         },
       },

@@ -250,6 +250,18 @@ input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance: none;
 }
 
+/* Custom Scrollbar
+--------------------------------------------------------------------------------------------------------*/
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888888;
+  border-radius: 10px;
+}
+
 /* Login Page
 --------------------------------------------------------------------------------------------------------*/
 .logo {
@@ -726,7 +738,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .table-card .card-header {
   display: flex;
   gap: 12px;
-  padding-bottom: 24px;
+  padding-bottom: 20px;
   flex-wrap: wrap;
 }
 .table-card .right-content {
@@ -752,10 +764,29 @@ input[type="search"]::-webkit-search-results-decoration {
   justify-content: space-between;
   text-transform: capitalize;
 }
-.MuiTableCell-head .MuiIconButton-root {
-  padding: 4px;
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-columnHeaders {
+  border-color: #bbbbbb;
 }
-.MuiTableCell-body .status {
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-columnHeader {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  padding: 0 18px;
+}
+.MuiDataGrid-root .MuiDataGrid-main .MuiDataGrid-cell {
+  color: #898989;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 0 18px;
+  border-color: #eeeeee;
+}
+.MuiDataGrid-root .MuiDataGrid-row--lastVisible .MuiDataGrid-cell {
+  border-bottom: none;
+}
+.MuiDataGrid-root .MuiDataGrid-footerContainer {
+  border: none;
+}
+.MuiDataGrid-cell .status {
   height: 24px;
   min-width: 112px;
   border-radius: 4px;
@@ -768,23 +799,26 @@ input[type="search"]::-webkit-search-results-decoration {
   font-weight: 500;
   color: #ffffff;
 }
-.MuiTableCell-body .status.orange {
+.MuiDataGrid-cell .status.orange {
   background-color: #fea855;
 }
-.MuiTableCell-body .status.red {
+.MuiDataGrid-cell .status.red {
   background-color: #fa846a;
 }
-.MuiTableCell-body .status.green {
+.MuiDataGrid-cell .status.green {
   background-color: #4cd772;
 }
 
 /* Table Pagination */
 div.MuiTablePagination-root.MuiTablePagination-root {
-  padding-top: 26px;
+  padding-top: 30px;
   margin-right: -4px;
 }
 .MuiTablePagination-root .MuiToolbar-root {
   min-height: auto;
+}
+.MuiTablePagination-root .MuiTablePagination-selectLabel {
+  text-transform: capitalize;
 }
 .MuiTablePagination-root .MuiTablePagination-selectLabel {
   font-size: 16px;
@@ -797,6 +831,7 @@ div.MuiTablePagination-root.MuiTablePagination-root {
   min-width: 72px;
   margin-left: 16px;
   min-height: 30px;
+  margin-right: 24px;
 }
 .MuiTablePagination-root .MuiInputBase-root .MuiSelect-select {
   text-align-last: left;
@@ -976,12 +1011,16 @@ div.MuiTablePagination-root.MuiTablePagination-root {
 @media (max-width: 899px) {
   .login-container {
     flex-direction: column;
-    max-width: none;
+    max-width: 500px;
   }
   .login-content {
     width: auto;
     flex-basis: auto;
-    padding: 20px;
+    padding: 30px 20px;
+  }
+  .login-content .inner-content {
+    max-width: none;
+    text-align: center;
   }
   .login-wrapper .login-main {
     padding: 30px 20px;
@@ -1113,6 +1152,9 @@ div.MuiTablePagination-root.MuiTablePagination-root {
   }
   .table-card .right-content .MuiButton-outlined {
     width: 100%;
+  }
+  .table-header-menu .MuiMenu-paper {
+    width: calc(100% - 90px);
   }
   .MuiTablePagination-root .MuiInputBase-root {
     min-width: auto;
