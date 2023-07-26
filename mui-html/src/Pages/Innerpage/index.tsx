@@ -129,9 +129,11 @@ const Innerpage: React.FC = () => {
           >
             Innerpage
           </Typography>
+          {/* Table Start */}
           <div data-aos="fade-up" data-aos-delay="200">
             <TableComponent />
           </div>
+          {/* Table End */}
           <Card className="inner-card">
             {/* -------- first column start ---------  */}
             <Typography variant="h5" data-aos="fade-up" data-aos-delay="200">

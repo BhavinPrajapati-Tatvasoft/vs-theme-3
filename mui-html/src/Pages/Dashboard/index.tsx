@@ -335,6 +335,8 @@ const Dashboard: React.FC = () => {
           >
             Dashboard
           </Typography>
+
+          {/* Statisctics Start */}
           <Grid
             container
             spacing={{ xs: 2, xl: 4 }}
@@ -429,11 +431,14 @@ const Dashboard: React.FC = () => {
               </Link>
             </Grid>
           </Grid>
+          {/* Statisctics End */}
+
           <Grid
             container
             spacing={{ xs: 2, xl: 4 }}
             sx={{ pb: { xs: "16px", xl: "32px" } }}
           >
+            {/* Sales Analysis Chart Start */}
             <Grid item xs={12} xl={8} data-aos="fade-up" data-aos-delay="500">
               <Card className="sales-card">
                 <div className="card-header">
@@ -452,6 +457,9 @@ const Dashboard: React.FC = () => {
                 <Line options={options} data={data} />
               </Card>
             </Grid>
+            {/* Sales Analysis Chart End */}
+
+            {/* Todo List Start */}
             <Grid item xs={12} xl={4} data-aos="fade-up" data-aos-delay="600">
               <Card className="todo-list">
                 <div className="card-header">
@@ -1156,10 +1164,14 @@ const Dashboard: React.FC = () => {
                 </CustomTabPanel>
               </Card>
             </Grid>
+            {/* Todo List End */}
           </Grid>
+
+          {/* Table Start */}
           <div data-aos="fade-up" data-aos-delay="600">
             <TableComponent />
           </div>
+          {/* Table End */}
           <section className="copyright">
             <p>Copyright 2021. All rights reserved</p>
           </section>

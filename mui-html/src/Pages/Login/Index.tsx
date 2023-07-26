@@ -41,6 +41,7 @@ function Login() {
       </Helmet>
       <section className="login-wrapper">
         <div className="login-container">
+          {/* Login Content Start */}
           <div className="login-content">
             <div className="inner-content" data-aos="fade-right">
               <Typography variant="h2">Welcome Back!</Typography>
@@ -49,6 +50,9 @@ function Login() {
               </Typography>
             </div>
           </div>
+          {/* Login Content End */}
+
+          {/* Login Form Start */}
           <div className="login-main">
             <form data-aos="fade-up" data-aos-delay="200">
               <Link to="/" title="Logo" className="logo">
@@ -130,6 +134,7 @@ function Login() {
               </Button>
             </form>
           </div>
+          {/* Login Form End */}
         </div>
       </section>
     </>
